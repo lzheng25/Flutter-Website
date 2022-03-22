@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
-import LogoFlutter from 'assets/FlutterLogoV2.png';
+import LogoFlutter from 'assets/FlutterLogoV2copy.png';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 
@@ -41,7 +41,7 @@ export default function Header({ className }) {
               key={10} /* Need specific key */
               label='home'
             >
-              Get Started
+              Join the Waitlist
             </Link>    
           </Button>
           <MobileDrawer />

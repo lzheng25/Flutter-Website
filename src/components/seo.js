@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 
 export default function SEO({
-  description = 'flutter website',
+  description = 'startup product landing page',
   author = 'JSM',
   meta,
   title = 'startup landing title',

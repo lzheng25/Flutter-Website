@@ -1,48 +1,40 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Image, Text, Flex } from 'theme-ui';
-import { Link } from 'components/link';
-// import { Link } from 'react-scroll';
-// import data from '../header/header.data';
-import data from './footer.data';
-import FooterLogo from 'assets/logo.svg';
-import LogoFlutter from 'assets/FlutterLogoV3.png';
+import { jsx, Box, Container, Image, Text } from 'theme-ui';
+import { Link } from 'react-scroll';
+import { Linkalt } from 'components/link'
+import data from '../header/header.data';
+import LogoFlutter from 'assets/FlutterLogoV3-copy.png';
 
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
-          <Link path="/">
+          <Linkalt path="/">
             <Image src={LogoFlutter} sx={{width:'30%', height:'30%'}} alt="logo"/>
             <Box sx={styles.footer.menus}>
               <nav>
-                {data.menuItem.map((item, i) => (
-                  // <Link
-                  //   activeClass="active" /* class applied when element is reached */
-                  //   to={item.path} /* Target to scroll to */
-                  //   spy={true} /* Make link selected */
-                  //   smooth={true} /* Smooth animation */
-                  //   offset={-60} /* Make a bit above the thing we scroll to */
-                  //   duration={500} /* in Milliseconds */
-                  //   key={i} /* Need specific key */
-                  //   label={item.label}
-                  //   sx={styles.footer.link}
-                  // >
-                  //   {item.label}
-                  // </Link>
+                {data.map((item, i) => (
                   <Link
-                    path={item.path}
-                    key={i}
+                    activeClass="active" /* class applied when element is reached */
+                    to={item.path} /* Target to scroll to */
+                    spy={true} /* Make link selected */
+                    smooth={true} /* Smooth animation */
+                    offset={-60} /* Make a bit above the thing we scroll to */
+                    duration={500} /* in Milliseconds */
+                    key={i} /* Need specific key */
                     label={item.label}
                     sx={styles.footer.link}
-                  />
+                  >
+                    {item.label}
+                  </Link>
                 ))}
               </nav>
             </Box>
             <Text sx={styles.footer.copyright}>
               Copyright by {new Date().getFullYear()} Flutter
             </Text>
-          </Link>
+          </Linkalt>
         </Box>
       </Container>
     </footer>

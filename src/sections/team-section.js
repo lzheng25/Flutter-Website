@@ -94,6 +94,33 @@ const data = [
       },
     ],
   },
+  {
+    id: 4,
+    imgSrc: Member4,
+    altText: 'Coco Lam',
+    title: 'Coco Lam',
+    designation: 'Position',
+    socialProfile: [
+      {
+        id: 1,
+        name: 'facebook',
+        path: '#',
+        icon: <FaFacebookF />,
+      },
+      {
+        id: 2,
+        name: 'linkedin',
+        path: '#',
+        icon: <FaLinkedin />,
+      },
+      {
+        id: 3,
+        name: 'instagram',
+        path: '#',
+        icon: <FaInstagram />,
+      },
+    ],
+  },
 ];
 
 export default function TeamSection() {

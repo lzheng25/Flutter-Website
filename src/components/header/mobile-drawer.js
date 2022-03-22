@@ -29,50 +29,50 @@ const social = [
 export default function MobileDrawer() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
-    /* This is menu 3-lines icon for mobile */
-    <Drawer
-      width="320px"
-      drawerHandler={
-        <Box sx={styles.handler}>
-          <IoMdMenu size="26px" />
-        </Box>
-      }
-      open={isDrawerOpen}
-      toggleHandler={() => setIsDrawerOpen((prevState) => !prevState)}
-      closeButton={<IoMdClose size="24px" color="#000000" />}
-      drawerStyle={styles.drawer}
-      closeBtnStyle={styles.close} 
-    >
-      <Scrollbars autoHide >
-        <Box sx={styles.content}>
-          <Box sx={styles.menu}>
-          {menuItems.map((menuItem, i) => (
-              /* link scrolls to a section */
-              <Link
-                activeClass="active" /* class applied when element is reached */
-                to={menuItem.path} /* Target to scroll to */
-                spy={true} /* Make link selected */
-                smooth={true} /* Smooth animation */
-                offset={-70} /* Make a bit above the thing we scroll to */
-                duration={500} /* in Milliseconds */
-                key={i} /* Need specific key */
-              >
-                {menuItem.label}
-              </Link>
-            ))}
-          </Box>
-        </Box>
-        <Box sx={styles.menuFooter}>
-          <Box sx={styles.social}>
-            {social.map((socialItem, i) => (
-              <Box as="span" key={i} sx={styles.social.icon}>
-                <Link to={socialItem.path}>{socialItem.icon}</Link>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-      </Scrollbars>
-    </Drawer>
+   /* This is menu 3-lines icon for mobile */
+   <Drawer
+   width="320px"
+   drawerHandler={
+     <Box sx={styles.handler}>
+       <IoMdMenu size="26px" />
+     </Box>
+   }
+   open={isDrawerOpen}
+   toggleHandler={() => setIsDrawerOpen((prevState) => !prevState)}
+   closeButton={<IoMdClose size="24px" color="#000000" />}
+   drawerStyle={styles.drawer}
+   closeBtnStyle={styles.close} 
+ >
+   <Scrollbars autoHide >
+     <Box sx={styles.content}>
+       <Box sx={styles.menu}>
+       {menuItems.map((menuItem, i) => (
+           /* link scrolls to a section */
+           <Link
+             activeClass="active" /* class applied when element is reached */
+             to={menuItem.path} /* Target to scroll to */
+             spy={true} /* Make link selected */
+             smooth={true} /* Smooth animation */
+             offset={-70} /* Make a bit above the thing we scroll to */
+             duration={500} /* in Milliseconds */
+             key={i} /* Need specific key */
+           >
+             {menuItem.label}
+           </Link>
+         ))}
+       </Box>
+     </Box>
+     <Box sx={styles.menuFooter}>
+       <Box sx={styles.social}>
+         {social.map((socialItem, i) => (
+           <Box as="span" key={i} sx={styles.social.icon}>
+             <Link to={socialItem.path}>{socialItem.icon}</Link>
+           </Box>
+         ))}
+       </Box>
+     </Box>
+   </Scrollbars>
+ </Drawer>
   );
 };
 

@@ -18,13 +18,13 @@ export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>
         <Layout>
-          <SEO title="Flutter Web Page" />
+          <SEO title="Flutter Landing Page" />
           <Banner />
           <KeyFeature />
           {/* <ServiceSection /> */}
           {/* <Feature /> */}
           {/* <CoreFeature /> */}
-          <WorkFlow/>
+          <WorkFlow />
           {/* <Package /> */}
           <TeamSection />
           {/* <TestimonialCard /> */}

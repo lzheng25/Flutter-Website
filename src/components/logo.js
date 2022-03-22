@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { jsx, Image } from 'theme-ui';
-import { Link } from 'components/link';
+import { Linkalt } from 'components/link';
 
 export default function Logo({ src, ...rest }) {
   return (
-    <Link
+    <Linkalt
       path="/"
       sx={{
         variant: 'links.logo',
@@ -15,7 +15,7 @@ export default function Logo({ src, ...rest }) {
       {...rest}
     >
       <Image src={src} sx={styles.logo} alt="Flutter Logo" />
-    </Link>
+    </Linkalt>
   );
 }
 
