@@ -11,7 +11,7 @@ export default function Footer() {
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
           <Linkalt path="/">
-            <Image src={LogoFlutter} sx={{width:'30%', height:'30%'}} alt="logo"/>
+            <Image src={LogoFlutter} sx={{width:'195px', height:'65px'}} alt="logo"/>
             <Box sx={styles.footer.menus}>
               <nav>
                 {data.map((item, i) => (

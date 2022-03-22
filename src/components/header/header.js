@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Button } from 'theme-ui';
+import { jsx, Container, Flex, Button, Text } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
@@ -13,7 +13,7 @@ export default function Header({ className }) {
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
           <Logo src={LogoFlutter}/>
-          <Flex sx={styles.name}>Flutter</Flex>
+          <Text sx={styles.name} as="p">Flutter</Text>
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((menuItem, i) => (
               /* link scrolls to a section */
@@ -119,8 +119,8 @@ const styles = {
     },
   },
   name: {
-    color: '#06e2be',
-    fontSize: 10,
+    color: 'primary',
+    fontSize: 8,
     font: "'DM Sans', sans-serif",
   }
 };
