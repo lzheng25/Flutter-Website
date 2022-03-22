@@ -4,7 +4,7 @@ import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
-import LogoFlutter from 'assets/FlutterLogoV2copy.png';
+import LogoFlutter from 'assets/FlutterLogoV3-copy.png';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 
@@ -13,7 +13,7 @@ export default function Header({ className }) {
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
           <Logo src={LogoFlutter}/>
-          <Text sx={styles.name} as="p">Flutter</Text>
+          {/* <Text sx={styles.name} as="p">Flutter</Text> */}
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((menuItem, i) => (
               /* link scrolls to a section */

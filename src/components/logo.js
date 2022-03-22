@@ -21,7 +21,7 @@ export default function Logo({ src, ...rest }) {
 
 const styles = {
   logo: {
-    width: 70,
-    height: 70,
+    width: 195,
+    height: 65,
   }
 }
