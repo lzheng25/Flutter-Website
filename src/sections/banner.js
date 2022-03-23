@@ -21,7 +21,7 @@ export default function Banner() {
           <Heading as="h1" variant="heroPrimary">
             The next social app that will revolutionize the college social scene
           </Heading>
-          <Text as="p" vairant="heroSecondary">
+          <Text as="p" variant="heroSecondary">
             Connecting people directly in real life as opposed to texting - whether that is networking, making new friends, or dating!
           </Text>
           <Text>⠀</Text>
