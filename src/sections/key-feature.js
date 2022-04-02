@@ -6,6 +6,7 @@ import FeatureCardColumn from 'components/feature-card-column.js';
 import Performance from 'assets/key-feature/performance.svg';
 import Partnership from 'assets/key-feature/partnership.svg';
 import Subscription from 'assets/key-feature/subscription.svg';
+// import Heart from 'assets/key-feature/heart.svg';
 import Support from 'assets/key-feature/support.svg';
 
 const data = [
@@ -15,31 +16,31 @@ const data = [
     altText: 'Easy to Use',
     title: 'Easy to Use',
     text:
-      "Simply hold then swipe up on someone's profile card to request a connection with them. If they accept, schedule a meetup!",
+      "On the home page, simply hold then swipe up on someone's profile card to request a connection with them. You can starting texting as simple as that!",
   },
   {
     id: 2,
     imgSrc: Partnership,
     altText: 'Radar',
-    title: 'Location-based Radar',
+    title: 'Tiered Radar',
     text:
-      'Profiles that appear are of people who are near you based on location, so it will be convenient to meet them in person.',
+      'Users near you are sorted into tiers based on distance in 5 kilometer increments and their profiles appear on your carousel in a randomzied order. This makes sure that you will not always get people who are right next to you.',
   },
   {
     id: 3,
-    imgSrc: Subscription,
-    altText: 'Profiles',
-    title: 'Intuitive Profiles',
+    imgSrc: Support,
+    altText: 'Requests',
+    title: 'Swipe Limits',
     text:
-      "At a glance, you can easily get to know someone's background, such as their college and interests.",
+      'Every day, you get 10 swipes and receive 10 swipes at maximum. 24 hours after receiving a request, you decide whether to pass or schedule a date. The limits ensures that every interaction is thoughtful and authentic, which prevents mindless swiping.',
   },
   {
     id: 4,
-    imgSrc: Support,
-    altText: 'Requests',
-    title: 'Time-sensitive Requests',
+    imgSrc: Subscription,
+    altText: 'Profiles',
+    title: 'Dating',
     text:
-      'You get 6 hours to respond to a request, so no more ghosting. Think carefully!',
+      "After receiving a swipe, you get 24 hours to decide whether you want to pass, or schedule a date within 2 weeks from now using the calendar tab. Get ready to say goodbye to ghosting!",
   },
 ];
 
@@ -48,7 +49,7 @@ export default function KeyFeature() {
     <section id="feature" sx={{ variant:'section.KeyFeature' }}>
     <Container pt='100px' pb='100px'>
       <SectionHeader
-        slogan="Your Digital Wingsperson"
+        slogan="Swipe With Intention"
         title="Key features of our product"
       />
       <Grid sx={styles.grid}>

@@ -7,6 +7,7 @@ import LogoDark from 'assets/logo.svg';
 import LogoFlutter from 'assets/FlutterLogoV3-copy.png';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
+import Link2 from 'next/link';
 
 export default function Header({ className }) {
   return (
@@ -40,8 +41,10 @@ export default function Header({ className }) {
               duration={500} /* in Milliseconds */
               key={10} /* Need specific key */
               label='home'
-            >
-              Join the Waitlist
+              >
+              
+              <Link2 href="/signup"> Sign up </Link2>
+              
             </Link>    
           </Button>
           <MobileDrawer />

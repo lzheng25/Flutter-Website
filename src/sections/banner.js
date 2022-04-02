@@ -11,7 +11,16 @@ export default function Banner() {
   function handleWaitlist(e) {
     e.preventDefault()
     const temp = email.current.value;
-    alert(temp);
+    if (!temp.includes("edu")) {
+      alert("Invalid school email! Must end with .edu")
+    } else {
+      if (temp.indexOf(".edu") == temp.length-4) {
+        alert(temp + " is valid email");
+        console.log(temp);
+      } else {
+        alert("Invalid school email! Must end with .edu")
+      }
+    }
     email.current.value = null;
   }
   return (
@@ -24,7 +33,6 @@ export default function Banner() {
           <Text as="p" variant="heroSecondary">
             Connecting people directly in real life as opposed to texting - whether that is networking, making new friends, or dating!
           </Text>
-          <Text>⠀</Text>
           {/* <Box>
             <input type="text"/>
             <Button variant="primary"> 
@@ -38,7 +46,7 @@ export default function Banner() {
             <Input
               name="subscribe"
               id="subscribe"
-              placeholder="Enter email"
+              placeholder="Enter school email"
               sx={styles.form.input}
               ref={email}
             />
