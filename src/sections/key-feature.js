@@ -6,7 +6,7 @@ import FeatureCardColumn from 'components/feature-card-column.js';
 import Performance from 'assets/key-feature/performance.svg';
 import Partnership from 'assets/key-feature/partnership.svg';
 import Subscription from 'assets/key-feature/subscription.svg';
-// import Heart from 'assets/key-feature/heart.svg';
+// import Heart from 'assets/key-feature/heart.jpg';
 import Support from 'assets/key-feature/support.svg';
 
 const data = [
@@ -32,12 +32,12 @@ const data = [
     altText: 'Requests',
     title: 'Swipe Limits',
     text:
-      'Every day, you get 10 swipes and receive 10 swipes at maximum. 24 hours after receiving a request, you decide whether to pass or schedule a date. The limits ensures that every interaction is thoughtful and authentic, which prevents mindless swiping.',
+      'Every day, you get 1 swipe and can receive up to 3 swipes.  24 hours after receiving a request, you decide whether to pass or schedule a date. The limits ensures that every interaction is thoughtful and authentic, which prevents mindless swiping.',
   },
   {
     id: 4,
     imgSrc: Subscription,
-    altText: 'Profiles',
+    altText: 'Dating',
     title: 'Dating',
     text:
       "After receiving a swipe, you get 24 hours to decide whether you want to pass, or schedule a date within 2 weeks from now using the calendar tab. Get ready to say goodbye to ghosting!",

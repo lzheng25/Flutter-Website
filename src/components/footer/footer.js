@@ -3,7 +3,7 @@ import { jsx, Box, Container, Image, Text } from 'theme-ui';
 import { Link } from 'react-scroll';
 import { Linkalt } from 'components/link'
 import data from '../header/header.data';
-import LogoFlutter from 'assets/FlutterLogoV3-copy.png';
+import LogoFlutter from 'assets/FlutterLogoV4.png';
 
 export default function Footer() {
   return (

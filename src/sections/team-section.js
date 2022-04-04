@@ -17,8 +17,8 @@ const data = [
     id: 1,
     imgSrc: Member1,
     altText: 'Douglas Yang',
-    title: "Douglas Yang, school?",
-    designation: 'Position',
+    title: "Douglas Yang, Co-founder and CEO",
+    designation: 'Douglas Yang is a first year at Harvard majoring in Computer Science and Applied Math. On campus, he is a case team lead in the Harvard Product Lab, and serves as the Director of Finance in the Harvard Computer Society. Outside of school, he has rich venture capital experience, having worked in Sequoia Capital and Cue Ball Capital as an analyst, and serves as the co-founder and executive director of Peer2Peer – a leading NGO based in Hong Kong. He is also an avid beatboxer, magician, crypto investor, and boyfriend.',
     socialProfile: [
       {
         id: 1,
@@ -44,8 +44,8 @@ const data = [
     id: 2,
     imgSrc: Member2,
     altText: 'Immanuel Carmouche',
-    title: 'Immanuel Carmouche',
-    designation: 'Position',
+    title: 'Immanuel Carmouche, Co-founder',
+    designation: '',
     socialProfile: [
       {
         id: 1,
@@ -71,8 +71,8 @@ const data = [
     id: 3,
     imgSrc: Member3,
     altText: 'Lucas Zheng',
-    title: 'Lucas Zheng',
-    designation: 'Position',
+    title: 'Lucas Zheng, CTO',
+    designation: "Lucas Zheng is a freshman majoring in Computer Science in Carnegie Mellon's School of Computer Science. At school, he is part of the CMU Blockchain club and Scottylabs, where he is helping to create a new CMU course website. Some of his hobbies include watching NBA, skiing, and crypto trading. He also previously worked with Douglas for Peer2Peer.",
     socialProfile: [
       {
         id: 1,
