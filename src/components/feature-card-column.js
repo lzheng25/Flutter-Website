@@ -3,19 +3,31 @@ import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 
 export default function FeatureCardColumn({
   src,
-  altText = 'default alt text',
+  // altText = 'default alt text',
+  altText,
   title,
   text,
+  ntitle,
+  ntext,
 }) {
   return (
     <Box sx={styles.card}>
       <Image src={src} altText={altText} sx={styles.img}/>
       <Box sx={styles.wrapper}>
+        <Heading sx={styles.wrapper.header}>
+          {altText}
+        </Heading>
         <Heading sx={styles.wrapper.title}>
           {title}
         </Heading>
         <Text sx={styles.wrapper.subTitle}>
           {text}
+        </Text>
+        <Heading sx={styles.wrapper.title}>
+          {ntitle}
+        </Heading>
+        <Text sx={styles.wrapper.subTitle}>
+          {ntext}
         </Text>
       </Box>
     </Box>
@@ -41,6 +53,13 @@ const styles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    header: {
+      fontSize: 5,
+      color: 'primary',
+      lineHeight: 1.4,
+      fontWeight: 700,
+      mb: [2, null, 3],
+    },
     title: {
       fontSize: 3,
       color: 'heading_secondary',
@@ -52,6 +71,7 @@ const styles = {
       fontSize: 1,
       fontWeight: 400,
       lineHeight: '1.9',
+      mb: [2, null, 3],
     },
   },
 };

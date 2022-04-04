@@ -10,7 +10,7 @@ import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 import Link2 from 'next/link';
 
-export default function Header({ className }) {
+export default function Header({ className, buttonText }) {
   return (
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
@@ -43,10 +43,12 @@ export default function Header({ className }) {
               key={10} /* Need specific key */
               label='home'
               >
+                
+                { buttonText == "Sign Up" ? 
+                <Link2 href="/signup"><Text>{buttonText}</Text></Link2> 
+                : <Link2 href="/"><Text>Home</Text></Link2> }           
               
-              <Link2 href="/signup"> Sign up </Link2>
-              
-            </Link>    
+              </Link>
           </Button>
           <MobileDrawer />
         </Container>
