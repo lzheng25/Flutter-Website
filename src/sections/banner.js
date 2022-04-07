@@ -5,6 +5,7 @@ import { Container, Box, Heading, Text, Image, Button, Input } from 'theme-ui';
 import BannerImg from 'assets/banner-thumb.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
+import { Waitlist } from 'waitlistapi';
 
 export default function Banner() {
   const email = useRef();
