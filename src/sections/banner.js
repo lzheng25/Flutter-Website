@@ -58,12 +58,12 @@ export default function Banner() {
             <Button type="submit" sx={styles.form.button} onClick={handleWaitlist}>
               Join the waitlist!
             </Button> */}
-            {/* <Waitlist 
+            <Waitlist 
               api_key="RF6X3O" 
-              waitlist_link="https://flutter-website-7t9fhqyet-lzheng25.vercel.app/://example.com"
+              waitlist_link="https://flutter-website.vercel.app/"
               joinWaitlistHeading="Get early access for Flutter!"
               switchToCheckStatusLabel="Already on the waitlist?"
-            /> */}
+            />
             
             
           </Box>
