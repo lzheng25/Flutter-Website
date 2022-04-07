@@ -24,6 +24,8 @@ export default function Banner() {
     }
     email.current.value = null;
   }
+  const instructions1 = "Get Early Access!"
+  const instructions2 = "Enter your university '.edu. email."
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
@@ -40,8 +42,10 @@ export default function Banner() {
               Join the waitlist! 
             </Button>
           </Box> */}
-          <Box as="form" sx={styles.form}>
-            <Box as="label" htmlFor="subscribe" variant="styles.srOnly">
+          <Box as="form" sx={{display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',}}>
+            {/* <Box as="label" htmlFor="subscribe" variant="styles.srOnly">
               subscribe
             </Box>
             <Input
@@ -53,10 +57,20 @@ export default function Banner() {
             />
             <Button type="submit" sx={styles.form.button} onClick={handleWaitlist}>
               Join the waitlist!
-            </Button>
+            </Button> */}
+            <div><Waitlist 
+              ref={email}
+              api_key="RF6X3O" 
+              waitlist_link="https://flutter-website-7t9fhqyet-lzheng25.vercel.app/://example.com"
+              joinWaitlistHeading="Get early access for Flutter!"
+              switchToCheckStatusLabel="Already on the waitlist?"
+            /></div>
+            
+            
           </Box>
+          
           <Text as="p" vairant="heroSecondary">
-            By joining the waitlist, you will get notified early when our product launches!
+            By joining the waitlist, you will get notified early when our product launches! You must enter a university email ending with ".edu"!
           </Text>
         </Box>
         <Box sx={styles.banner.imageBox}>
@@ -124,9 +138,9 @@ const styles = {
   },
   form: {
     mb: ['30px', null, null, null, null, '60px'],
-    pl: '60px',
+    // pl: '60px',
     justifyContent: "center",
-    display: ['flex'],
+    display: ['flex', '1000px'],
     input: {
       borderRadius: ['4px'],
       backgroundColor: '#fff',
