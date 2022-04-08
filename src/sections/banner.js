@@ -2,30 +2,15 @@
 import { jsx } from 'theme-ui';
 import { useRef } from 'react'
 import { Container, Box, Heading, Text, Image, Button, Input } from 'theme-ui';
-import BannerImg from 'assets/banner-thumb.png';
+// import BannerImg from 'assets/banner-thumb.png';
+import BannerImg from 'assets/douglas_card.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
 import { Waitlist } from 'waitlistapi';
+import { useState } from 'react';
+import styles2 from 'components/waitlist.module.css'
 
 export default function Banner() {
-  const email = useRef();
-  function handleWaitlist(e) {
-    e.preventDefault()
-    const temp = email.current.value;
-    if (!temp.includes("edu")) {
-      alert("Invalid school email! Must end with .edu")
-    } else {
-      if (temp.indexOf(".edu") == temp.length-4) {
-        alert(temp + " is valid email");
-        console.log(temp);
-      } else {
-        alert("Invalid school email! Must end with .edu")
-      }
-    }
-    email.current.value = null;
-  }
-  const instructions1 = "Get Early Access!"
-  const instructions2 = "Enter your university '.edu. email."
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
@@ -42,9 +27,7 @@ export default function Banner() {
               Join the waitlist! 
             </Button>
           </Box> */}
-          <Box as="form" sx={{display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',}}>
+          {/* <Box as="form" sx={styles.form}> */}
             {/* <Box as="label" htmlFor="subscribe" variant="styles.srOnly">
               subscribe
             </Box>
@@ -58,26 +41,91 @@ export default function Banner() {
             <Button type="submit" sx={styles.form.button} onClick={handleWaitlist}>
               Join the waitlist!
             </Button> */}
-            <Waitlist 
+            {/* <Waitlist 
               api_key="RF6X3O" 
               waitlist_link="https://flutter-website.vercel.app/"
               joinWaitlistHeading="Get early access for Flutter!"
               switchToCheckStatusLabel="Already on the waitlist?"
-            />
-            
-            
-          </Box>
+            /> */}
+          {/* </Box> */}
+
+          <Form/>
           
           <Text as="p" vairant="heroSecondary">
-            By joining the waitlist, you will get notified early when our product launches! You must enter a university email ending with ".edu"!
+            By joining the waitlist, you will get notified early when our product launches! You must enter a university email ending with ".edu".
           </Text>
         </Box>
         <Box sx={styles.banner.imageBox}>
-          <Image src={BannerImg} alt='banner'/>
+          <Image src={BannerImg} alt='banner' sx={{height:'45%', width:'45%'}}/>
         </Box>
       </Container>
     </section>
   );
+}
+
+function Form() {
+  const [email, setEmail] = useState("");
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+
+  function handleWaitlist(e) {
+    e.preventDefault()
+    const temp = email;
+    if (!temp.includes("edu")) {
+      alert("Invalid school email! Must end with .edu")
+    } else {
+      if (temp.indexOf(".edu") == temp.length-4) {
+        alert(temp + " is valid email");
+        console.log(temp);
+      } else {
+        alert("Invalid school email! Must end with .edu")
+      }
+    }
+    setEmail("");
+  }
+  
+
+  const submit = async (e) => {
+      // We will submit the form ourselves
+      e.preventDefault()
+
+      // TODO: make a POST request to our backend
+      let response = await fetch("/api/waitlist", {
+        method: "POST",
+        body: JSON.stringify({email: email})
+      })
+      if (response.ok) {
+          setHasSubmitted(true);
+      } else {
+          setError(await response.text())
+      }
+  }
+
+  // If the user successfully submitted their email,
+  //   display a thank you message
+  if (hasSubmitted) {
+      return <div className={styles2.formWrapper}>
+          <span className={styles2.subtitle}>
+              Thanks for signing up! We will be in touch soon.
+          </span>
+      </div>
+  }
+
+  // Otherwise, display the form
+  return <form className={styles2.formWrapper} onSubmit={submit}>
+
+      <input type="email" required placeholder="Email"
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.edu"
+             title="College '.edu' email"
+             className={[styles2.formInput, styles2.formTextInput].join(" ")}
+             value={email} onChange={e => setEmail(e.target.value)}/>
+
+      <button type="submit"  className={[styles2.formInput, styles2.formSubmitButton].join(" ")}>
+          Join Waitlist
+      </button>
+
+      {error ? <div className={styles2.error}>{error}</div> : null}
+  </form>
 }
 
 const styles = {
