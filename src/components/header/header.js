@@ -33,7 +33,7 @@ export default function Header({ className, buttonText }) {
             ))}
           </Flex>
           <Button className="donate__btn" variant="secondary" aria-label="Get Started">
-            <Link
+             <Link
               activeClass="active" /* class applied when element is reached */
               to='home' /* Target to scroll to */
               spy={true} /* Make link selected */
@@ -43,10 +43,10 @@ export default function Header({ className, buttonText }) {
               key={10} /* Need specific key */
               label='home'
               >
-                
-                { buttonText == "Sign Up" ? 
+                Home
+                {/* { buttonText == "Sign Up" ? 
                 <Link2 href="/signup"><Text>{buttonText}</Text></Link2> 
-                : <Link2 href="/"><Text>Home</Text></Link2> }           
+                : <Link2 href="/"><Text>Home</Text></Link2> }            */}
               
               </Link>
           </Button>

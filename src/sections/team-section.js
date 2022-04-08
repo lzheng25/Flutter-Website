@@ -45,7 +45,7 @@ const data = [
     imgSrc: Member2,
     altText: 'Immanuel Carmouche',
     title: 'Immanuel Carmouche, Co-founder',
-    designation: '',
+    designation: 'Immanuel Carmouche is a first year student at Harvard planning to major in Social Studies with a focus on Foreign Policy. On campus he serves as a policy researcher for both the Institute of Politics and the Harvard Undergraduate Foreign Policy Initiative. As Cofounder of Flutter he hopes to help you find the love of your life.',
     socialProfile: [
       {
         id: 1,
@@ -99,7 +99,7 @@ const data = [
     imgSrc: Member4,
     altText: 'Coco Lam',
     title: 'Coco Lam',
-    designation: 'Position',
+    designation: 'Coco Lam is a student at Cardiff Sixth Form College soon to be majoring in Psychology and Behavioural Sciences at University of Cambridge. As a model, influencer and KOL, she has rich media and marketing experiences, she is also the founder of Orange Org- an art-for-charity NPO. Coco is a TEDx speaker, ‘Top 10 Outstanding Young Artists Hong Kong’, photographer and social activist. Also, she is he only girl on the team!',
     socialProfile: [
       {
         id: 1,
