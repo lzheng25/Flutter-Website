@@ -93,7 +93,7 @@ function Form() {
   // Otherwise, display the form
   return <form ref={content} className={styles2.formWrapper} onSubmit={submit}>
       <div className={styles2.label}>
-      <label className={styles2.label} name="first">First Name</label>
+        <label className={styles2.label} name="first">First Name</label>
       </div>
       <input type="text" required placeholder="First/Nickname"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
@@ -127,7 +127,7 @@ function Form() {
 
 const styles = {
   banner: {
-    pt: ['140px', '145px', '155px', '170px', null, null, '180px', '215px'],
+    pt: ['140px', '145px', '155px', '170px', null, null, '150px', '150px'],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',
     zIndex: 2,
