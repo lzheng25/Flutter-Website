@@ -71,7 +71,7 @@ const data = [
     id: 3,
     imgSrc: Member3,
     altText: 'Lucas Zheng',
-    title: 'Lucas Zheng, CTO',
+    title: 'Lucas Zheng, Chief Technology Officer',
     designation: "Lucas Zheng is a freshman majoring in Computer Science in Carnegie Mellon's School of Computer Science. At school, he is part of the CMU Blockchain club and Scottylabs, where he is helping to create a new CMU course website. Some of his hobbies include watching NBA, skiing, and crypto trading. He also previously worked with Douglas for Peer2Peer.",
     socialProfile: [
       {
@@ -98,7 +98,7 @@ const data = [
     id: 4,
     imgSrc: Member4,
     altText: 'Coco Lam',
-    title: 'Coco Lam',
+    title: 'Coco Lam, Head of Public Relations',
     designation: 'Coco Lam is a student at Cardiff Sixth Form College soon to be majoring in Psychology and Behavioural Sciences at University of Cambridge. As a model, influencer and KOL, she has rich media and marketing experiences, she is also the founder of Orange Org- an art-for-charity NPO. Coco is a TEDx speaker, ‘Top 10 Outstanding Young Artists Hong Kong’, photographer and social activist. Also, she is he only girl on the team!',
     socialProfile: [
       {

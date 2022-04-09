@@ -37,7 +37,7 @@ function Bio ({title, designation}) {
         <Heading className="info__name" sx={styles.infoWrapper.name}>
           {title}
         </Heading>
-        <button className={["link", styles2.hideWaitlist].join(" ")} 
+        <button className={["link", styles2.bioClick].join(" ")} 
           sx={styles.hideForm}
           onClick={() => {
             setBio(true);
@@ -48,7 +48,7 @@ function Bio ({title, designation}) {
             <Heading className="info__name" sx={styles.infoWrapper.name}>
               {title}
             </Heading>
-            <button className={["link", styles2.hideWaitlist].join(" ")} 
+            <button className={["link", styles2.bioClick].join(" ")} 
               sx={styles.hideForm}
               onClick={() => {
                 setBio(false);
@@ -117,7 +117,7 @@ const styles = {
   },
   socialShare: {
     position: ['relative', null, 'absolute'],
-    right: [0, null, 6, null, 4, 6],
+    right: [0, null, 3, null, 4, 6],
     bottom: [0, null, '18px', 5],
     width: ['100%', null, 'auto'],
     display: 'flex',
