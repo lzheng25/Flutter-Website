@@ -1,28 +1,63 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Text, Heading, Image, Box, Link } from 'theme-ui';
+import { useState } from 'react';
+import styles2 from 'components/waitlist.module.css'
+import { FaCentercode } from 'react-icons/fa';
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io"
 
 export default function TeamCard({ src, altText, title, designation, social }) {
+  
   return (
     <Box sx={styles.card}>
       <Image src={src} alt={altText} sx={styles.memberThumb} />
-      <Box sx={styles.infoWrapper}>
+      {/* <Box sx={styles.infoWrapper}>
         <Heading className="info__name" sx={styles.infoWrapper.name}>
           {title}
         </Heading>
-        <Text className="info__designation" sx={styles.infoWrapper.designation}>
-          {designation}
-        </Text>
-      </Box>
+        <Bio/>
+      </Box> */}
+      <Bio title={title} designation={designation}/>
       <Box sx={styles.socialShare} className="social__share">
         {social.map((item) => (
-          <Link key={item.id} href={item.path} className={item.name}>
+          <Link key={item.id} href={item.path} className={item.name} target="_blank" rel="noopener noreferrer">
             {item.icon}
           </Link>
         ))}
       </Box>
     </Box>
   );
+}
+
+function Bio ({title, designation}) {
+  const [bio, setBio] = useState(false);
+  
+  if (!bio) {
+    return <Box sx={styles.infoWrapper}>
+        <Heading className="info__name" sx={styles.infoWrapper.name}>
+          {title}
+        </Heading>
+        <button className={["link", styles2.hideWaitlist].join(" ")} 
+          sx={styles.hideForm}
+          onClick={() => {
+            setBio(true);
+          }}> Click for bio <IoIosArrowForward className={styles2.icon}/> </button>
+      </Box>
+  } else {
+    return <Box sx={styles.infoWrapper}>
+            <Heading className="info__name" sx={styles.infoWrapper.name}>
+              {title}
+            </Heading>
+            <button className={["link", styles2.hideWaitlist].join(" ")} 
+              sx={styles.hideForm}
+              onClick={() => {
+                setBio(false);
+              }}> Hide bio <IoIosArrowDown className={styles2.icon}/> </button>
+              <Text className="info__designation" sx={styles.infoWrapper.designation}>
+              {designation}
+            </Text>
+          </Box>
+  }
 }
 
 const styles = {
@@ -102,6 +137,26 @@ const styles = {
       '&:hover': {
         color: ['primary', null, 'text'],
       },
+    },
+  },
+  hideForm: {
+    width: '100%',
+    mt: [3, null, 4],
+    textAlign: 'center',
+    fontSize: [1, '15px'],
+    color: 'text',
+    fontWeight: '400',
+    mb: 2,
+    fontFamily: 'body',
+    cursor: 'pointer',
+    transition: 'all 0.35s',
+    display: 'block',
+    textDecoration: 'none',
+    transition: 'all 0.15s',
+    lineHeight: [1.5, null, 1.8],
+    px: [2, null, 4],
+    ':hover': {
+      color: 'primary',
     },
   },
 };
