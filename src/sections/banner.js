@@ -6,7 +6,6 @@ import { Container, Box, Heading, Text, Image, Button, Input } from 'theme-ui';
 import BannerImg from 'assets/douglas_card.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
-import { Waitlist } from 'waitlistapi';
 import { useState } from 'react';
 import styles2 from 'components/waitlist.module.css';
 import emailjs from '@emailjs/browser';
