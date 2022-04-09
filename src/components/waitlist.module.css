@@ -1,8 +1,9 @@
 .formWrapper {
-    justify-content: center;
+    /* justify-content: center; */
+    align-items: flex-start;
     padding-top: 2rem;
     padding-bottom: 3rem;
-    display: flex;              /* two column display for input + button */
+    display: flex;
     flex-wrap: wrap;
 }
 .formShow {
@@ -45,14 +46,20 @@
     /* background-color: #7476ED; */
     background-color: #06e2be;
     color: white;
+    transition: all 0.25s;
+}
+.formSubmitButton:hover {
+    box-shadow: rgb(6, 226, 190, 0.57) 0px 9px 20px -5px;
 }
 .error {
     color: red;
 }
 .hideWaitlist {
+    text-align: center;
     justify-content: center;
     background: none;
-    border: none;
+    border: 2px solid #06e2be;
+    width: 100%
 }
 .subtitle {
     flex: 100%;

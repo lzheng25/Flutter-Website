@@ -92,34 +92,35 @@ function Form() {
 
   // Otherwise, display the form
   return <form ref={content} className={styles2.formWrapper} onSubmit={submit}>
-      <label sx={{pr:'450px'}} name="first">First Name</label>
-      <input type="text" required placeholder="First"
+      <div className={styles2.label}>
+      <label className={styles2.label} name="first">First Name</label>
+      </div>
+      <input type="text" required placeholder="First/Nickname"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={first} onChange={e => setFirst(e.target.value)}
       />
-      <label sx={{pr:'450px'}} name="last">Last Name</label>
-      <input type="text" required placeholder="Last"
+      <label className={styles2.label} name="last">Last Name</label>
+      <input type="text" required placeholder="Last Name"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={last} onChange={e => setLast(e.target.value)}
       />
-      <label sx={{pr:'440px'}} name="mail">School email</label>
+      <label className={styles2.label} name="mail">School email</label>
       <input type="email" required placeholder="Ending with '.edu'"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.edu"
             title="College '.edu' email"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={email} onChange={e => setEmail(e.target.value)}
       />
-      
 
       <button type="submit" className={[styles2.formInput, styles2.formSubmitButton].join(" ")}>
           Join Waitlist
       </button>
       <button className={["link", styles2.hideWaitlist].join(" ")} 
-          sx={styles.hideForm}
-          onClick={() => {
-            setForm(false);
-          }}> Click to hide form </button>
-
+        sx={styles.hideForm}
+        onClick={() => {
+          setForm(false);
+        }}> Click to hide form
+      </button>
       {error ? <div className={styles2.error}>{error}</div> : null}
   </form>
 }

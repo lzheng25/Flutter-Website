@@ -152,6 +152,7 @@ const styles = {
     transition: 'all 0.35s',
     display: 'block',
     textDecoration: 'none',
+    transition: 'all 0.15s',
     lineHeight: [1.5, null, 1.8],
     px: [2, null, 4],
     ':hover': {
