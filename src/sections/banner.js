@@ -41,10 +41,10 @@ function Form() {
   const [email, setEmail] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
-  const [form, setForm] = useState(false);
+  const [open, setOpen] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [error, setError] = useState(null);
-  const content = useRef();
+  const form = useRef();
 
   const submit = async (e) => {
       // We will submit the form ourselves
@@ -56,24 +56,34 @@ function Form() {
         body: JSON.stringify({first: first, last: last, email: email})
       })
       if (response.ok) {
+          console.log("Sending email...");
           setHasSubmitted(true);
-          emailjs.sendForm('service_dra3bp7', 'template_44nfai4', content.current, 'lio_bDdc-iMJ7yqEg')
-            .then((result) => {
-                console.log('Sending email to ', result.text);
+          
+          emailjs.send(
+            "service_dra3bp7",
+            "template_44nfai4",
+            {
+              first: `${first}`,
+              mail: `${email}`
+            },
+            "lio_bDdc-iMJ7yqEg"
+          ).then((result) => {
+              console.log('Sent email to ' + first + ' at ' + email + ': ' + result.text);
             }, (error) => {
-                console.log(error.text);
+              console.log(error.text);
             });
+
       } else {
           setError(await response.text())
       }
   }
 
-  if (!form) {
+  if (!open) {
     return <div className={styles2.formWrapper}>
         <Button className={[styles2.formShow, styles2.formShowButton].join(" ")}
           vairant="primary"
           onClick={() => {
-            setForm(true);
+            setOpen(true);
           }}> Click to join waitlist!
         </Button>
       </div>
@@ -90,34 +100,31 @@ function Form() {
   }
 
   // Otherwise, display the form
-  return <form ref={content} className={styles2.formWrapper} onSubmit={submit}>
-      <div className={styles2.label}>
-        <label className={styles2.label} name="first">First Name</label>
-      </div>
-      <input type="text" required placeholder="First/Nickname"
+  return <form ref={form} className={styles2.formWrapper} onSubmit={submit}>
+      <label>First Name</label>
+      <input type="text" required placeholder="First/Nickname" name="first" id="first"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={first} onChange={e => setFirst(e.target.value)}
       />
-      <label className={styles2.label} name="last">Last Name</label>
-      <input type="text" required placeholder="Last Name"
+      <label>Last Name</label>
+      <input type="text" required placeholder="Last Name" name="last" id="last"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={last} onChange={e => setLast(e.target.value)}
       />
-      <label className={styles2.label} name="mail">School email</label>
+      <label>School email</label>
       <input type="email" required placeholder="Ending with '.edu'"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.edu"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.edu" name="mail" id="mail"
             title="College '.edu' email"
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={email} onChange={e => setEmail(e.target.value)}
       />
-
       <button type="submit" className={[styles2.formInput, styles2.formSubmitButton].join(" ")}>
           Join Waitlist
       </button>
       <button className={["link", styles2.hideWaitlist].join(" ")} 
         sx={styles.hideForm}
         onClick={() => {
-          setForm(false);
+          setOpen(false);
         }}> Click to hide form
       </button>
       {error ? <div className={styles2.error}>{error}</div> : null}

@@ -16,7 +16,8 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         await postHandler(req, res);
     } else {
-        res.status(404).send("");
+        // res.status(404).send("");
+        console.log("hello");
     }
 }
 
@@ -72,7 +73,7 @@ const create = record => {
         console.error(err);
         return;
       }
-      console.log(record.getId());
+      console.log("Created", record.getId());
     });
   };
   
@@ -82,7 +83,7 @@ const create = record => {
         console.error(err);
         return;
       }
-      console.log(record.get("Email"));
+      console.log("Replaced", record.get("Email"));
     });
   };
   
