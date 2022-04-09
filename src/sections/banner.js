@@ -58,7 +58,7 @@ function Form() {
       })
       if (response.ok) {
           setHasSubmitted(true);
-          emailjs.sendForm('service_dra3bp7', 'template_44nfai4', form.current, 'lio_bDdc-iMJ7yqEg')
+          emailjs.sendForm('service_dra3bp7', 'template_44nfai4', content.current, 'lio_bDdc-iMJ7yqEg')
             .then((result) => {
                 console.log('Sending email to ', result.text);
             }, (error) => {
