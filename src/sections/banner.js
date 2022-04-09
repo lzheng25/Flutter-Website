@@ -118,7 +118,6 @@ function Form() {
             className={[styles2.formInput, styles2.formTextInput].join(" ")}
             value={email} onChange={e => setEmail(e.target.value)}
       />
-
       <button type="submit" className={[styles2.formInput, styles2.formSubmitButton].join(" ")}>
           Join Waitlist
       </button>
