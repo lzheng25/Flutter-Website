@@ -1,11 +1,11 @@
 .formWrapper {
+    justify-content: center;
     padding-top: 2rem;
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
     display: flex;              /* two column display for input + button */
     flex-wrap: wrap;
 }
-/* Shared by the input and button so they are the same size and style */
-.formInput {
+.formShow {
     padding: 12px 20px;         
     box-sizing: border-box;
     border: none;
@@ -13,25 +13,53 @@
     font-size: 1.1rem;
     font-family: 'DM Sans', sans-serif;
 }
+.formShowButton {
+    /* background-color: #7476ED; */
+    flex: 10%;
+    background-color: #06e2be;
+    color: white;
+    /* width: 220px; */
+}
+.formShowButton:hover {
+    /* background-color: #7476ED; */
+    box-shadow: 5px 10px rgb(6, 226, 190, 0.57);
+}
+/* Shared by the input and button so they are the same size and style */
+.formInput {
+    padding: 12px 20px;         
+    box-sizing: border-box;
+    border: 2px solid #06e2be;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 1rem;
+}
 .formTextInput {
-    flex: 70%;                  /* take up most of the available space */
+    flex: 100%;                  /* take up most of the available space */
     /* background-color: #232323; */
-    background-color: #FBFBF8;
+    background-color: white;
     color: #343D48;
 }
 .formSubmitButton {
-    flex: 30%;                  /* take up the rest of the space */
+    flex: 100%;                  /* take up the rest of the space */
     /* background-color: #7476ED; */
-    background-color: #7476ED;
+    background-color: #06e2be;
     color: white;
 }
 .error {
     color: red;
 }
-
+.hideWaitlist {
+    justify-content: center;
+    background: none;
+    border: none;
+}
 .subtitle {
     flex: 100%;
     font-size: 1.2rem;
     font-weight: 250;
-    color: #7476ED;
+    color: #06e2be;
+}
+.icon {
+    vertical-align: middle;
 }

@@ -1,5 +1,8 @@
 /** @jsx jsx */
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
+import { useState } from 'react';
+import { AiFillCaretRight, AiFillCaretDown } from "react-icons/ai";
+import styles2 from 'components/waitlist.module.css'
 
 export default function FeatureCardColumn({
   src,
@@ -30,8 +33,27 @@ export default function FeatureCardColumn({
           {ntext}
         </Text>
       </Box>
+      {/* <Feature altText={altText} title={title} text={text} ntitle={ntitle} ntext={ntext} /> */}
     </Box>
   );
+}
+
+function Feature ({altText, title, text, ntitle, ntext}) {
+  const [feature1, setFeature1] = useState(false);
+  
+  if (!feature1) {
+    return <Box sx={styles.wrapper}>
+            <Heading sx={styles.wrapper.header}>
+              {altText}
+            </Heading>
+            <Heading sx={styles.wrapper.title}>
+              {title} <AiFillCaretRight/>
+            </Heading>
+            <Heading sx={styles.wrapper.title}>
+              {ntitle} <AiFillCaretRight/>
+            </Heading>1
+          </Box>
+  }
 }
 
 const styles = {

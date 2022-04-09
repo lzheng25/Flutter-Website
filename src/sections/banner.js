@@ -8,9 +8,11 @@ import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
 import { Waitlist } from 'waitlistapi';
 import { useState } from 'react';
-import styles2 from 'components/waitlist.module.css'
+import styles2 from 'components/waitlist.module.css';
+import emailjs from '@emailjs/browser';
 
 export default function Banner() {
+
   return (
     <section sx={styles.banner} id="home">
       <Container sx={styles.banner.container}>
@@ -21,33 +23,6 @@ export default function Banner() {
           <Text as="p" variant="heroSecondary">
             Connecting people directly in real life as opposed to texting - whether that is networking, making new friends, or dating!
           </Text>
-          {/* <Box>
-            <input type="text"/>
-            <Button variant="primary"> 
-              Join the waitlist! 
-            </Button>
-          </Box> */}
-          {/* <Box as="form" sx={styles.form}> */}
-            {/* <Box as="label" htmlFor="subscribe" variant="styles.srOnly">
-              subscribe
-            </Box>
-            <Input
-              name="subscribe"
-              id="subscribe"
-              placeholder="Enter school email"
-              sx={styles.form.input}
-              ref={email}
-            />
-            <Button type="submit" sx={styles.form.button} onClick={handleWaitlist}>
-              Join the waitlist!
-            </Button> */}
-            {/* <Waitlist 
-              api_key="RF6X3O" 
-              waitlist_link="https://flutter-website.vercel.app/"
-              joinWaitlistHeading="Get early access for Flutter!"
-              switchToCheckStatusLabel="Already on the waitlist?"
-            /> */}
-          {/* </Box> */}
 
           <Form/>
           
@@ -65,25 +40,12 @@ export default function Banner() {
 
 function Form() {
   const [email, setEmail] = useState("");
+  const [first, setFirst] = useState("");
+  const [last, setLast] = useState("");
+  const [form, setForm] = useState(false);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [error, setError] = useState(null);
-
-  function handleWaitlist(e) {
-    e.preventDefault()
-    const temp = email;
-    if (!temp.includes("edu")) {
-      alert("Invalid school email! Must end with .edu")
-    } else {
-      if (temp.indexOf(".edu") == temp.length-4) {
-        alert(temp + " is valid email");
-        console.log(temp);
-      } else {
-        alert("Invalid school email! Must end with .edu")
-      }
-    }
-    setEmail("");
-  }
-  
+  const content = useRef();
 
   const submit = async (e) => {
       // We will submit the form ourselves
@@ -92,13 +54,30 @@ function Form() {
       // TODO: make a POST request to our backend
       let response = await fetch("/api/waitlist", {
         method: "POST",
-        body: JSON.stringify({email: email})
+        body: JSON.stringify({first: first, last: last, email: email})
       })
       if (response.ok) {
           setHasSubmitted(true);
+          emailjs.sendForm('service_dra3bp7', 'template_44nfai4', form.current, 'lio_bDdc-iMJ7yqEg')
+            .then((result) => {
+                console.log('Sending email to ', result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
       } else {
           setError(await response.text())
       }
+  }
+
+  if (!form) {
+    return <div className={styles2.formWrapper}>
+        <Button className={[styles2.formShow, styles2.formShowButton].join(" ")}
+          vairant="primary"
+          onClick={() => {
+            setForm(true);
+          }}> Click to join waitlist!
+        </Button>
+      </div>
   }
 
   // If the user successfully submitted their email,
@@ -112,17 +91,34 @@ function Form() {
   }
 
   // Otherwise, display the form
-  return <form className={styles2.formWrapper} onSubmit={submit}>
+  return <form ref={content} className={styles2.formWrapper} onSubmit={submit}>
+      <label sx={{pr:'450px'}} name="first">First Name</label>
+      <input type="text" required placeholder="First"
+            className={[styles2.formInput, styles2.formTextInput].join(" ")}
+            value={first} onChange={e => setFirst(e.target.value)}
+      />
+      <label sx={{pr:'450px'}} name="last">Last Name</label>
+      <input type="text" required placeholder="Last"
+            className={[styles2.formInput, styles2.formTextInput].join(" ")}
+            value={last} onChange={e => setLast(e.target.value)}
+      />
+      <label sx={{pr:'440px'}} name="mail">School email</label>
+      <input type="email" required placeholder="Ending with '.edu'"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.edu"
+            title="College '.edu' email"
+            className={[styles2.formInput, styles2.formTextInput].join(" ")}
+            value={email} onChange={e => setEmail(e.target.value)}
+      />
+      
 
-      <input type="email" required placeholder="Email"
-             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.edu"
-             title="College '.edu' email"
-             className={[styles2.formInput, styles2.formTextInput].join(" ")}
-             value={email} onChange={e => setEmail(e.target.value)}/>
-
-      <button type="submit"  className={[styles2.formInput, styles2.formSubmitButton].join(" ")}>
+      <button type="submit" className={[styles2.formInput, styles2.formSubmitButton].join(" ")}>
           Join Waitlist
       </button>
+      <button className={["link", styles2.hideWaitlist].join(" ")} 
+          sx={styles.hideForm}
+          onClick={() => {
+            setForm(false);
+          }}> Click to hide form </button>
 
       {error ? <div className={styles2.error}>{error}</div> : null}
   </form>
@@ -205,6 +201,22 @@ const styles = {
       padding: ['0 15px'],
       ml: ['10px'],
       width: ['auto', null, null, null, '180px'],
+    },
+  },
+  hideForm: {
+    fontSize: [1, '15px'],
+    color: 'text',
+    fontWeight: '400',
+    mb: 2,
+    fontFamily: 'body',
+    cursor: 'pointer',
+    transition: 'all 0.35s',
+    display: 'block',
+    textDecoration: 'none',
+    lineHeight: [1.5, null, 1.8],
+    px: [2, null, 4],
+    ':hover': {
+      color: 'primary',
     },
   },
 };
