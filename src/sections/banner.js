@@ -59,16 +59,19 @@ function Form() {
           console.log("Sending email...");
           setHasSubmitted(true);
           
-          // emailjs.sendForm(
-          //   "service_dra3bp7",
-          //   "template_44nfai4",
-          //   form.current,
-          //   "user_lio_bDdc-iMJ7yqEg"
-          // ).then((result) => {
-          //     console.log('Sent email ', result.text);
-          //   }, (error) => {
-          //     console.log(error.text);
-          //   });
+          emailjs.send(
+            "service_dra3bp7",
+            "template_44nfai4",
+            {
+              first: `${first}`,
+              mail: `${email}`
+            },
+            "lio_bDdc-iMJ7yqEg"
+          ).then((result) => {
+              console.log('Sent email to ' + first + ' at ' + email + ': ' + result.text);
+            }, (error) => {
+              console.log(error.text);
+            });
 
       } else {
           setError(await response.text())
