@@ -13,11 +13,12 @@ const base = new Airtable({ apiKey: "keyczUJvbt6UCpY5F" }).base("appSn6Bucohn9Rk
 
 export default async function handler(req, res) {
     // We only want to handle POST requests, everything else gets a 404
-    if (req.method === 'POST') {
-        await postHandler(req, res);
-    } else {
-        res.status(404).send("");
-    }
+    // if (req.method === 'POST') {
+    //     await postHandler(req, res);
+    // } else {
+    //     res.status(404).send("");
+    // }
+    await postHandler(req, res);
 }
 
 async function postHandler(req, res) {
@@ -72,7 +73,7 @@ const create = record => {
         console.error(err);
         return;
       }
-      console.log(record.getId());
+      console.log("Created", record.getId());
     });
   };
   
@@ -82,7 +83,7 @@ const create = record => {
         console.error(err);
         return;
       }
-      console.log(record.get("Email"));
+      console.log("Replaced", record.get("Email"));
     });
   };
   

@@ -17,8 +17,8 @@ const data = [
     id: 1,
     imgSrc: Member1,
     altText: 'Douglas Yang',
-    title: "Douglas Yang, Co-founder and CEO",
-    designation: 'Douglas Yang is a first year at Harvard majoring in Computer Science and Applied Math. On campus, he is a case team lead in the Harvard Product Lab, and serves as the Director of Finance in the Harvard Computer Society. Outside of school, he has rich venture capital experience, having worked in Sequoia Capital and Cue Ball Capital as an analyst, and serves as the co-founder and executive director of Peer2Peer – a leading NGO based in Hong Kong. He is also an avid beatboxer, magician, crypto investor, and boyfriend.',
+    title: "Douglas Yang, CEO",
+    designation: 'Douglas Yang, one of the two co-founders, is a first year at Harvard majoring in Computer Science and Applied Math. On campus, he is a case team lead in the Harvard Product Lab, and serves as the Director of Finance in the Harvard Computer Society. Outside of school, he has rich venture capital experience, having worked in Sequoia Capital and Cue Ball Capital as an analyst, and serves as the co-founder and executive director of Peer2Peer – a leading NGO based in Hong Kong. He is also an avid beatboxer, magician, crypto investor, and boyfriend.',
     socialProfile: [
       {
         id: 1,
@@ -44,8 +44,8 @@ const data = [
     id: 2,
     imgSrc: Member2,
     altText: 'Immanuel Carmouche',
-    title: 'Immanuel Carmouche, Co-founder',
-    designation: 'Immanuel Carmouche is a first year student at Harvard planning to major in Social Studies with a focus on Foreign Policy. On campus he serves as a policy researcher for both the Institute of Politics and the Harvard Undergraduate Foreign Policy Initiative. As Cofounder of Flutter he hopes to help you find the love of your life.',
+    title: 'Immanuel Carmouche, COO',
+    designation: 'Immanuel Carmouche, the other co-founder, is a first year student at Harvard planning to major in Social Studies with a focus on Foreign Policy. On campus he serves as a policy researcher for both the Institute of Politics and the Harvard Undergraduate Foreign Policy Initiative. As Cofounder of Flutter he hopes to help you find the love of your life.',
     socialProfile: [
       {
         id: 1,
@@ -71,7 +71,7 @@ const data = [
     id: 3,
     imgSrc: Member3,
     altText: 'Lucas Zheng',
-    title: 'Lucas Zheng, Chief Technology Officer',
+    title: 'Lucas Zheng, CTO',
     designation: "Lucas Zheng is a freshman majoring in Computer Science in Carnegie Mellon's School of Computer Science. At school, he is part of the CMU Blockchain club and Scottylabs, where he is helping to create a new CMU course website. Some of his hobbies include watching NBA, skiing, and crypto trading. He also previously worked with Douglas for Peer2Peer.",
     socialProfile: [
       {
@@ -98,7 +98,7 @@ const data = [
     id: 4,
     imgSrc: Member4,
     altText: 'Coco Lam',
-    title: 'Coco Lam, Head of Public Relations',
+    title: 'Coco Lam, CMO',
     designation: 'Coco Lam is a student at Cardiff Sixth Form College soon to be majoring in Psychology and Behavioural Sciences at University of Cambridge. As a model, influencer and KOL, she has rich media and marketing experiences, she is also the founder of Orange Org- an art-for-charity NPO. Coco is a TEDx speaker, ‘Top 10 Outstanding Young Artists Hong Kong’, photographer and social activist. Also, she is he only girl on the team!',
     socialProfile: [
       {
