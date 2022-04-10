@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/waitlist.js": {
-        "memory": 1024
-      }
-    }
-  }
