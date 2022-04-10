@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx, NavLink as MenuLink, Link as A } from 'theme-ui';
 import NextLink from 'next/link';
 

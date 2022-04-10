@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx, Image } from 'theme-ui';
 import { Linkalt } from 'components/link';
 

@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx, Image, Box, Heading, Text } from 'theme-ui';
 import { useState } from 'react';
 import { AiFillCaretRight, AiFillCaretDown } from "react-icons/ai";

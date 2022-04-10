@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx, Box, Container, Image, Text } from 'theme-ui';
 import { Link } from 'react-scroll';
 import { Linkalt } from 'components/link'
