@@ -63,12 +63,12 @@ async function saveUser(user) {
             "Last": `${user.last}`
     }
 
-    updateOrInsert (rec)
+    await updateOrInsert (rec)
     console.log("Finished updating or inserting new record.")
     
 }
 
-const create = record => {
+const create = async record => {
     base('Flutter Waitlist').create(record, function(err, record) {
       if (err) {
         console.error(err);
@@ -78,7 +78,7 @@ const create = record => {
     });
   };
   
-  const replace = (id, record) => {
+  const replace = async (id, record) => {
     base('Flutter Waitlist').replace(id, record, function(err, record) {
       if (err) {
         console.error(err);
@@ -88,7 +88,7 @@ const create = record => {
     });
   };
   
-  const updateOrInsert = record => {
+  const updateOrInsert = async record => {
     const primaryField = record.Email;
   
     base('Flutter Waitlist')
