@@ -79,9 +79,9 @@ async function saveUser(user) {
 //   };
 
   const create = async record => {
-    const record = await base('Flutter Waitlist').create(record);
+    const r = await base('Flutter Waitlist').create(record);
     try{
-      console.log("Created", record.getId());
+      console.log("Created", r.getId());
     } catch(err){
       console.error(err);
     };
@@ -98,9 +98,9 @@ async function saveUser(user) {
   // };
 
   const replace = async (id, record) => {
-    const record = await base('Flutter Waitlist').replace(id, record);
+    const r = await base('Flutter Waitlist').replace(id, record);
     try{
-      console.log("Replaced", record.get("Email"));
+      console.log("Replaced", r.get("Email"));
     } catch(err){
       console.error(err);
     };
