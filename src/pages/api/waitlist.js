@@ -51,7 +51,7 @@ async function saveUser(user) {
 
     try {
         await webhook.send({
-            text: user.email + ' just joined the waitlist!',
+            text: user.first + ' ' + user.last + ' just joined the waitlist with ' + user.email + '!',
         });
     } catch (err) {
         console.log(`error connecting: ${err}`);
