@@ -1,9 +1,9 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx, Box, Container, Image, Text } from 'theme-ui';
 import { Link } from 'react-scroll';
 import { Linkalt } from 'components/link'
 import data from '../header/header.data';
-import LogoFlutter from 'assets/FlutterLogoV4.png';
+// import LogoFlutter from 'assets/FlutterLogoV4.png';
 
 export default function Footer() {
   return (
@@ -11,8 +11,8 @@ export default function Footer() {
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
           <Linkalt path="/">
-            <Image src={LogoFlutter} sx={{width:'195px', height:'65px', mx: 'auto',
-      textAlign: 'center',}} alt="logo"/>
+            {/* <Image src={LogoFlutter} sx={{width:'195px', height:'65px', mx: 'auto',
+      textAlign: 'center',}} alt="logo"/> */}
             <Box sx={styles.footer.menus}>
               <nav>
                 {data.map((item, i) => (

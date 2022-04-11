@@ -1,4 +1,4 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx } from 'theme-ui';
 import { useRef } from 'react'
 import { Container, Box, Heading, Text, Image, Button, Input } from 'theme-ui';

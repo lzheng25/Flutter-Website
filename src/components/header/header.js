@@ -1,20 +1,21 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx, Container, Flex, Button, Text } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
 // import LogoFlutter from 'assets/FlutterLogoV3-copy.png';
-import LogoFlutter from 'assets/FlutterLogoV4.png';
+// import LogoFlutter from 'assets/FlutterLogoV4.png';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 import Link2 from 'next/link';
+import Image2 from 'next/image';
 
 export default function Header({ className, buttonText }) {
   return (
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
-          <Logo src={LogoFlutter}/>
+          <Image2 src='/FlutterLogoV4.png' width="195px" height="65px"/>
           {/* <Text sx={styles.name} as="p">Flutter</Text> */}
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((menuItem, i) => (

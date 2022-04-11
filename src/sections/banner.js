@@ -1,14 +1,15 @@
-/** @jsx jsx */
+/** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx } from 'theme-ui';
 import { useRef } from 'react'
 import { Container, Box, Heading, Text, Image, Button, Input } from 'theme-ui';
 // import BannerImg from 'assets/banner-thumb.png';
-import BannerImg from 'assets/douglas_card.png';
+// import BannerImg from 'assets/douglas_card.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
 import { useState } from 'react';
 import styles2 from 'components/waitlist.module.css';
 import emailjs from '@emailjs/browser';
+import Image2 from 'next/image';
 
 export default function Banner() {
 
@@ -30,7 +31,7 @@ export default function Banner() {
           </Text>
         </Box>
         <Box sx={styles.banner.imageBox}>
-          <Image src={BannerImg} alt='banner' sx={{height:'45%', width:'45%'}}/>
+          <Image2 src='/douglas_card.png' alt='banner' height="900px" width="400px"/>
         </Box>
       </Container>
     </section>
