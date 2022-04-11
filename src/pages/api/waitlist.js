@@ -68,51 +68,94 @@ async function saveUser(user) {
     
 }
 
-const create = async record => {
-    base('Flutter Waitlist').create(record, function(err, record) {
-      if (err) {
-        console.error(err);
-        return;
-      }
+// const create = async record => {
+//     base('Flutter Waitlist').create(record, function(err, record) {
+//       if (err) {
+//         console.error(err);
+//         return;
+//       }
+//       console.log("Created", record.getId());
+//     });
+//   };
+
+  const create = async record => {
+    const record = await base('Flutter Waitlist').create(record);
+    try{
       console.log("Created", record.getId());
-    });
+    } catch(err){
+      console.error(err);
+    };
   };
   
+  // const replace = async (id, record) => {
+  //   base('Flutter Waitlist').replace(id, record, function(err, record) {
+  //     if (err) {
+  //       console.error(err);
+  //       return;
+  //     }
+  //     console.log("Replaced", record.get("Email"));
+  //   });
+  // };
+
   const replace = async (id, record) => {
-    base('Flutter Waitlist').replace(id, record, function(err, record) {
-      if (err) {
-        console.error(err);
-        return;
-      }
+    const record = await base('Flutter Waitlist').replace(id, record);
+    try{
       console.log("Replaced", record.get("Email"));
-    });
+    } catch(err){
+      console.error(err);
+    };
   };
   
+  // const updateOrInsert = async record => {
+  //   const primaryField = record.Email;
+  
+  //   base('Flutter Waitlist')
+  //     .select({
+  //       maxRecords: 1,
+  //       view: "Grid view",
+  //       filterByFormula: `{Email} = "${primaryField}"`,
+  //     })
+  //     .eachPage(function page(records, fetchNextPage) {
+
+  //       records.forEach(function(r) {
+  //         console.log("Retrieved", r.get("Email"));
+  //         replace(r.id, record);
+  //       });
+  
+  //       if (!records.length) {
+  //         console.log("Empty");
+  //         create(record);
+  //       }
+        
+  //       fetchNextPage();
+
+  //     }, function done(err) {
+  //       if (err) { console.error(err); return; }
+  //     });
+  // };
+
   const updateOrInsert = async record => {
     const primaryField = record.Email;
   
-    base('Flutter Waitlist')
+    await base('Flutter Waitlist')
       .select({
         maxRecords: 1,
         view: "Grid view",
         filterByFormula: `{Email} = "${primaryField}"`,
       })
-      .eachPage(function page(records, fetchNextPage) {
-
-        records.forEach(function(r) {
-          console.log("Retrieved", r.get("Email"));
-          replace(r.id, record);
+      .eachPage(async function page(records, fetchNextPage) {
+        records.forEach(async function (r) {
+          //console.log("Retrieved", r.get("Email"));
+          await replace(r.id, record);
         });
   
-        if (!records.length) {
+        if (!records.length) {r
           console.log("Empty");
-          create(record);
+          await create(record);
         }
         
         fetchNextPage();
-
-      }, function done(err) {
-        if (err) { console.error(err); return; }
+        
       });
   };
 
