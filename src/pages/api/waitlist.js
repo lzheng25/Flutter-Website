@@ -64,6 +64,7 @@ async function saveUser(user) {
     }
 
     updateOrInsert (rec)
+    console.log("Finished updating or inserting new record.")
     
 }
 
