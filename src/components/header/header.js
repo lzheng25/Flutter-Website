@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import Logo from 'components/logo';
 import LogoDark from 'assets/logo.svg';
 // import LogoFlutter from 'assets/FlutterLogoV3-copy.png';
-// import LogoFlutter from 'assets/FlutterLogoV4.png';
+import LogoFlutter from 'assets/FlutterLogoV4.png';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 import Link2 from 'next/link';
@@ -15,7 +15,7 @@ export default function Header({ className, buttonText }) {
   return (
       <header sx={styles.header} className={className} id="header">
         <Container sx={styles.container}>
-          <Image2 src='/FlutterLogoV4.png' width="195px" height="65px"/>
+          <Logo src={LogoFlutter} sx={{width:"195px", height:"65px"}}/>
           {/* <Text sx={styles.name} as="p">Flutter</Text> */}
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((menuItem, i) => (
