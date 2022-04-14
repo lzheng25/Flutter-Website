@@ -17,8 +17,8 @@ import SectionHeader from 'components/section-header';
 import Head from 'next/head';
 
 const data = {
-  subTitle: 'swipe with intention',
-  title: 'Our Core Values',
+  subTitle: 'the big question',
+  title: 'Why Flutter?',
   features: [
     {
       id: 1,
@@ -46,15 +46,15 @@ const data = {
 export default function ServiceSection() {
   return (
     <section id="why" sx={{ variant: 'section.services' }}>
-      <Container pt='100px' pb='0px'>
-        <SectionHeader
+      <Container pt='120px' pb='0px'>
+        {/* <SectionHeader
           slogan="The Big Question"
           title="Why Flutter?"
-        />
+        /> */}
       <Container sx={styles.containerBox}>
-        <Box sx={styles.contentBox}>
+        {/* <Box sx={styles.contentBox}>
           <video autoPlay muted src={"/video/Flutter-animation.mp4"} style={{ width: "70%", height:"70%" }} />
-        </Box>
+        </Box> */}
         <Box styles={styles.thumbnail}>
           <TextFeature subTitle={data.subTitle} title={data.title}/>
           <Grid sx={styles.grid}>

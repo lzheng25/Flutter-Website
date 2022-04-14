@@ -30,14 +30,17 @@ export default function Banner() {
             By joining the waitlist, you will get notified early when our product launches! You must enter a university email ending with ".edu".
           </Text>
         </Box>
+        <Container pt='120px' pb='100px'>
         <Box sx={styles.banner.imageBox}>
-          <Image2 
+          {/* <Image2 
             src='/douglas_card.png'
             alt='banner' 
             height="900px" 
             width="400px"
-            sx={{pb:'10rem'}}/>
+            sx={{pb:'10rem'}}/> */}
+          <video autoPlay muted src={"/video/Flutter-big-video.mp4"} style={{ width: "90%", height:"90%" }} />
         </Box>
+        </Container>
       </Container>
     </section>
   );

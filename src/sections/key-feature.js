@@ -32,7 +32,7 @@ const data = [
     title: 'Carousel',
     text:
       "Say goodbye to swipe-through profile stacks! With a feel almost IDENTICAL to Instagram, Flutter’s carousel allows you to browse and revisit profiles around you to your heart’s content. Carousels are automatically refreshed every 24 hours – take your time to find who you like most :)",
-    ntitle: '(Very) Limited Swipes',
+    ntitle: 'Limited Actions',
     ntext: 'No more trigger happy swiping! In fact, Flutter doesn’t even use swipes – you send notes of interest to people you like! Here’s the catch: You only get 1 note at any given time, so take advantage of the carousel and choose carefully. You get your note back when the recipient makes a decision on you.'
   },
   {
