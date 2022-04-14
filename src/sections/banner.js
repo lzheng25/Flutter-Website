@@ -18,10 +18,10 @@ export default function Banner() {
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <Heading as="h1" variant="heroPrimary">
-            The next social app that will revolutionize the college social scene
+            The next dating app to revolutionize the college dating scene
           </Heading>
           <Text as="p" variant="heroSecondary">
-            Connecting people directly in real life as opposed to texting - whether that is networking, making new friends, or dating!
+          No ghosting, no catfishing, no “are they actually interested in me?”  - experience online dating and connect in a completely new way!
           </Text>
 
           <Form/>
