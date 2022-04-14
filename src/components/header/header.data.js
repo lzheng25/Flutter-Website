@@ -4,6 +4,10 @@ export default [
     label: 'Home',
   },
   {
+    path: 'why',
+    label: 'Why Flutter',
+  },
+  {
     path: 'feature',
     label: 'Features',
   },

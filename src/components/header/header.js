@@ -25,7 +25,7 @@ export default function Header({ className, buttonText }) {
                 to={menuItem.path} /* Target to scroll to */
                 spy={true} /* Make link selected */
                 smooth={true} /* Smooth animation */
-                offset={-60} /* Make a bit above the thing we scroll to */
+                offset={-40} /* Make a bit above the thing we scroll to */
                 duration={500} /* in Milliseconds */
                 key={i} /* Need specific key */
               >
