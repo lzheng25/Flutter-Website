@@ -57,6 +57,9 @@ export default function ServiceSection() {
         </Box> */}
         <Box styles={styles.thumbnail}>
           <TextFeature subTitle={data.subTitle} title={data.title}/>
+          <Text pb='2rem'>
+            People love love. Dating apps nowadays promise to help you find love, but most people ironically use dating apps for fun – I’m sure you might even have that one friend who swipes through Tinder purely for leisure and to kill time. Flutter completely upheaves the current functionalities of dating apps to help people foster serious and meaningful relationships. Flutter will revolutionize the way dating apps work, specifically for college students, by reintroducing:
+          </Text>
           <Grid sx={styles.grid}>
             {data.features.map((feature) => (
               <Box sx={styles.card} key={feature.id}>
