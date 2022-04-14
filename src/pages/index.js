@@ -20,8 +20,8 @@ export default function IndexPage() {
         <Layout>
           <SEO title="Flutter Landing Page" />
           <Banner />
+          <ServiceSection />
           <KeyFeature />
-          {/* <ServiceSection /> */}
           {/* <Feature /> */}
           {/* <CoreFeature /> */}
           <WorkFlow />

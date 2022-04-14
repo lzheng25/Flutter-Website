@@ -31,7 +31,12 @@ export default function Banner() {
           </Text>
         </Box>
         <Box sx={styles.banner.imageBox}>
-          <Image2 src='/douglas_card.png' alt='banner' height="900px" width="400px"/>
+          <Image2 
+            src='/douglas_card.png'
+            alt='banner' 
+            height="900px" 
+            width="400px"
+            sx={{pb:'10rem'}}/>
         </Box>
       </Container>
     </section>

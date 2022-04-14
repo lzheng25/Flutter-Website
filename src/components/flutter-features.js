@@ -16,67 +16,86 @@ import Secure from 'assets/services/secure.svg';
 import SectionHeader from 'components/section-header';
 import Head from 'next/head';
 
-const data = {
-  subTitle: 'swipe with intention',
-  title: 'Our Core Values',
-  features: [
-    {
-      id: 1,
-      imgSrc: Smart,
-      altText: 'Intentionality',
-      title: 'Intentionality',
-      text:
-        'It’s hard to find anything meaningful on current apps when everyone’s having fun with trigger-happy swiping. Here at Flutter, every swipe is made with intention, so you know the person is genuinely interested in getting to know you, and only you.',
-      // text:
-      //   'Hi',
-    },
-    {
-      id: 2,
-      imgSrc: Secure,
-      altText: 'Authenticity',
-      title: 'Authenticity',
-      text:
-        'No one loves swiping through a sea of fake profiles and then getting led on or ghosted over text. And it’s almost always better to talk in-person. Here at Flutter, every profile represents a verified college student and chatrooms operate on a unique mechanism to make sure you get to know your interest in the most authentic way possible - in real life.',
-      // text:
-      //   'Hi',
-    },
-  ],
-};
-
-export default function ServiceSection() {
-  return (
-    <section id="why" sx={{ variant: 'section.services' }}>
-      <Container pt='100px' pb='0px'>
-        <SectionHeader
-          slogan="The Big Question"
-          title="Why Flutter?"
-        />
+export default function Flutterfeature({
+  id,
+  icon,
+  video,
+  left,
+  altText,
+  subtitle1,
+  text1,
+  subtitle2,
+  text2
+}) {
+  // video on left side
+  if (left) {
+    return (
       <Container sx={styles.containerBox}>
         <Box sx={styles.contentBox}>
-          <video autoPlay muted src={"/video/Flutter-animation.mp4"} style={{ width: "70%", height:"70%" }} />
+          <video autoPlay muted loop src={video} style={{ width: "70%", height:"70%" }} />
         </Box>
         <Box styles={styles.thumbnail}>
-          <TextFeature subTitle={data.subTitle} title={data.title}/>
+          {/* <TextFeature subTitle={data.subTitle} title={data.title}/> */}
           <Grid sx={styles.grid}>
-            {data.features.map((feature) => (
-              <Box sx={styles.card} key={feature.id}>
-                <Image src={feature.imgSrc} alt={feature.altText} sx={styles.icon}/>
-                <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>
-                    {feature.title}
-                  </Heading>
-                  <Text sx={styles.wrapper.subTitle}>
-                    {feature.text}
-                  </Text>
-                </Box>
+            <Image src={icon} alt={altText} sx={styles.img}/>
+            <Box sx={styles.card} key={id}>
+              <Box sx={styles.wrapper}>
+                <Heading sx={styles.wrapper.header}>
+                  {altText}
+                </Heading>
+                <Heading sx={styles.wrapper.title}>
+                  {subtitle1}
+                </Heading>
+                <Text sx={styles.wrapper.subTitle}>
+                  {text1}
+                </Text>
+                <Heading sx={styles.wrapper.title}>
+                  {subtitle2}
+                </Heading>
+                <Text sx={styles.wrapper.subTitle}>
+                  {text2}
+                </Text>
               </Box>
-            ))}
+            </Box>
           </Grid>
         </Box>
       </Container>
+    );
+  } else { // video on right side
+    return (
+      <Container sx={styles.containerBox}>
+        <Box styles={styles.thumbnail2}>
+          {/* <TextFeature subTitle={data.subTitle} title={data.title}/> */}
+          <Grid sx={styles.grid}>
+            <Image src={icon} alt={altText} sx={styles.img}/>
+            <Box sx={styles.card} key={id}>
+              <Box sx={styles.wrapper}>
+                <Heading sx={styles.wrapper.header}>
+                  {altText}
+                </Heading>
+                <Heading sx={styles.wrapper.title}>
+                  {subtitle1}
+                </Heading>
+                <Text sx={styles.wrapper.subTitle}>
+                  {text1}
+                </Text>
+                <Heading sx={styles.wrapper.title}>
+                  {subtitle2}
+                </Heading>
+                <Text sx={styles.wrapper.subTitle}>
+                  {text2}
+                </Text>
+              </Box>
+            </Box>
+          </Grid>
+        </Box>
+        <Box sx={styles.contentBox2}>
+          <video autoPlay muted loop src={video} style={{ width: "70%", height:"70%" }} />
+        </Box>
       </Container>
-    </section>
-  );
+    );
+  }
+  
 }
 
 const playPluse = keyframes`
@@ -101,7 +120,7 @@ const styles = {
     alignItems: ['flex-start', null, null, 'center'],
     justifyContent: ['flex-start', null, null, 'space-between'],
     flexDirection: ['column', null, null, 'row'],
-    pb: [0, null, null, null, null, 3],
+    pb: [10, null, null, null, null, 3],
   },
   thumbnail: {
     mr: ['auto', null, null, 6, 60, 85],
@@ -121,6 +140,44 @@ const styles = {
     mb: [7, null, 60, 0],
     textAlign: ['center', null, null, 'left'],
   },
+  thumbnail2: {
+    mr: ['auto', null, null, 6, 60, 85],
+
+    ml: ['auto', null, null, 0],
+    display: 'inline-flex',
+    flexShrink: 0.5,
+    position: 'relative',
+    '> img': {
+      position: 'relative',
+      zIndex: 1,
+      height: [310, 'auto'],
+    },
+  },
+  contentBox2: {
+    width: ['100%', null, null, 315, 390, 450, null, 500],
+    order: [2, null, null, 0],
+    flexShrink: 0,
+    mb: [7, null, 60, 0],
+    textAlign: ['center', null, null, 'right'],
+  },
+  // thumbnail2: {
+  //   mr: ['auto', null, null, 6, 60, 85],
+  //   order: [2, null, null, 0],
+  //   ml: ['auto', null, null, 0],
+  //   display: 'inline-flex',
+  //   position: 'relative',
+  //   '> img': {
+  //     position: 'relative',
+  //     zIndex: 1,
+  //     height: [310, 'auto'],
+  //   },
+  // },
+  // contentBox2: {
+  //   width: ['100%', null, null, 315, 390, 450, null, 500],
+  //   flexShrink: 0,
+  //   mb: [7, null, 60, 0],
+  //   textAlign: ['center', null, null, 'left'],
+  // },
   shapeBox: {
     position: 'absolute',
     bottom: -68,
@@ -191,7 +248,12 @@ const styles = {
     alignItems: 'flex-start',
     transition: 'all 0.3s',
   },
-
+  img: {
+    mx: ['auto', null, 0],
+    ml: ['auto', null, '-13px'],
+    mb: -2,
+    width: ['80px', null, null, '90px', null, 'auto'],
+  },
   icon: {
     width: ['45px', null, null, null, '55px'],
     height: 'auto',
@@ -203,19 +265,45 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     textAlign: 'left',
-    mt: '-5px',
+    mt: '-30px',
+    // title: {
+    //   fontSize: 3,
+    //   color: 'heading_secondary',
+    //   lineHeight: 1.4,
+    //   fontWeight: 700,
+    //   mb: [2, null, 3, 2, 3],
+    // },
+    // header: {
+    //   fontSize: 5,
+    //   color: 'primary',
+    //   lineHeight: 1.4,
+    //   fontWeight: 700,
+    //   mb: [2, null, 3],
+    // },
+    // subTitle: {
+    //   fontSize: [1, null, null, '14px', 1],
+    //   fontWeight: 400,
+    //   lineHeight: 1.9,
+    // },
+    header: {
+      fontSize: 5,
+      color: 'primary',
+      lineHeight: 1.4,
+      fontWeight: 700,
+      mb: [2, null, 3],
+    },
     title: {
       fontSize: 3,
       color: 'heading_secondary',
       lineHeight: 1.4,
       fontWeight: 700,
-      mb: [2, null, 3, 2, 3],
+      mb: [2, null, 3],
     },
-
     subTitle: {
-      fontSize: [1, null, null, '14px', 1],
+      fontSize: 1,
       fontWeight: 400,
-      lineHeight: 1.9,
+      lineHeight: '1.9',
+      mb: [2, null, 3],
     },
   },
   videoWrapper: {

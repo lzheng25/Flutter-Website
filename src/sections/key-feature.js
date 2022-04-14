@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui';
 import { Container, Grid } from 'theme-ui';
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
+import FlutterFeature from 'components/flutter-features';
 import Performance from 'assets/key-feature/performance.svg';
 import Partnership from 'assets/key-feature/partnership.svg';
 import Subscription from 'assets/key-feature/subscription.svg';
@@ -12,55 +13,63 @@ import Support from 'assets/key-feature/support.svg';
 const data = [
   {
     id: 1,
+    left: false,
     imgSrc: Subscription,
-    altText: 'Intentionality',
-    title: 'Proximity-based Vertical Carousel',
+    video: "/video/Flutter-login.mp4",
+    altText: 'Onboarding Page',
+    title: 'College Email Verification',
     text:
-      "Flutter’s vertical carousel is designed where users can always return to profiles they have previously looked at while scrolling. Other dating apps charge users to look at previously viewed profiles. Users can now intentionally swipe on the person they are interested in. No more unintentional swipes and missed connections. The profiles are displayed based on a tiered radius from the user. The user will first be shown users within a 5mi radius, then a 15mi radius, then a 30mi radius.",
-    ntitle: 'Limited Swipes',
-    ntext: 'At any given time, Flutter’s users can send out two swipes, and receive up to three, so users can only have up to five chats at any given time. This pairs with the ability to return to previously viewed profiles via the carousel to ensure that every swipe and decision is intentional.'
+      "Only people with college emails can join as users. This ensures that everyone is a verified student, and that people can connect is the safest way possible.",
+    ntitle: 'Human Verification',
+    ntext: 'Our team will conduct a human verification test with every user before they can start using Flutter. What you see is what you could have.'
   },
   {
     id: 2,
+    left: true,
     imgSrc: Support,
-    altText: 'Authenticity',
-    title: 'Detailed Profiles',
+    video: "/video/Flutter-carousel.mp4",
+    altText: 'Home Page',
+    title: 'Carousel',
     text:
-      'Flutter’s profiles display the user’s hobbies, major, age, gender, height, and if they drink, smoke, and use weed. Users are required to fill out one college-specific prompt to share their personality. 4 pictures must be chosen to display on the profile.',
-    ntitle: 'In-Person Facilitated Dates',
-    ntext: 'Flutter brings authenticity back into dating. Current dating apps have no feature that facilitates in-person dates. Flutter works to provide its users with organic connections made in real life. To achieve this, Flutter encourages its users to meet in person after the chatting period is over, by providing a list of public locations near the two users where they can meet for a date. There will be limited-time discounts on location offerings, exclusive to Flutter. '
+      "Say goodbye to swipe-through profile stacks! With a feel almost IDENTICAL to Instagram, Flutter’s carousel allows you to browse and revisit profiles around you to your heart’s content. Carousels are automatically refreshed every 24 hours – take your time to find who you like most :)",
+    ntitle: '(Very) Limited Swipes',
+    ntext: 'No more trigger happy swiping! In fact, Flutter doesn’t even use swipes – you send notes of interest to people you like! Here’s the catch: You only get 1 note at any given time, so take advantage of the carousel and choose carefully. You get your note back when the recipient makes a decision on you.'
   },
   {
     id: 3,
+    left: false,
     imgSrc: Performance,
-    altText: 'Immediacy',
-    title: '3hr timer',
+    video: "/video/Flutter-inbox.mp4",
+    altText: 'Inbox Page',
+    title: 'Unilateral Matching',
     text:
-      'After each swipe you make, the recipient of your swipe will have three hours to either accept or decline your swipe. Unlike other dating apps where you might have to wait days for a match or for people to respond to you, in Flutter you know within 3 hours if the person you swiped on is also interested.',
-    ntitle: '24hr chatroom',
-    ntext: "If the recipient of your swipe is interested in you and they accept your swipe, then a 24hr chatroom will open between the two. The two of you now have 24 hours to call, text, or video chat to get to know each other. At the end of the 24 hour period, the recipient will have to decide either to meet in person and set up a date or end the conversation and move on. This feature expedites the relationship process."
+      'That’s right! No need to wait for people to swipe on you! When you send a note to someone, you can immediately start talking to them.',
+    ntitle: 'Decision-driven, Time-restricted Chat Rooms',
+    ntext: "Texting is a tricky thing when it comes to online dating - some people are just not good at texting, while others don’t like being led on or ghosted. Within 24 hours from the moment you send a note, the recipient will have to make a decision on whether to set up a date with you or reject you. If the recipient unfortunately rejects you, you will get your note back and you can send it to someone else."
   },
   {
     id: 4,
+    left: true,
     imgSrc: Partnership,
-    altText: 'Security',
-    title: 'Only for College Students',
+    video: "/video/Flutter-date.mp4",
+    altText: 'Calendar Page',
+    title: 'Date Scheduling',
     text:
-      "Only verified college students can use Flutter. No more bots, no more catfishing. With Flutter, who you see is who you get.",
-    ntitle: 'Public Locations',
-    ntext: 'If the recipient chooses to meet up after the 24hr chatroom, then they are taken to the calendar tab where they can choose any day within the range of 2 weeks from the day the chatroom ended. They are shown the calendar of the sender and after choosing a day and time from 11AM to 9PM they are shown public locations between them and the sender. Whichever public location is chosen will be the location of the date.'
+      "The app helps you schedule dates if you’re interested in learning more about the person who sent you a note of interest! If you choose to schedule a date (and not reject them), the chat room will stay open until the day of the date :)",
+    ntitle: 'Discounts for dates',
+    ntext: 'Dates scheduled through the app will be able to enjoy exclusive discounts at nearby shops, restaurants and attractions. There may be only a finite number of discounts for certain places, so be sure to go on more dates and meet in real life!'
   },
 ];
 
 export default function KeyFeature() {
   return (
     <section id="feature" sx={{ variant:'section.KeyFeature' }}>
-    <Container pt='100px' pb='100px'>
+    <Container pt='50px' pb='100px'>
       <SectionHeader
         slogan="Swipe With Intention"
-        title="Key features of our product"
+        title="Key features of Flutter"
       />
-      <Grid sx={styles.grid}>
+      {/* <Grid sx={styles.grid}>
         {data.map((item) => (
           <FeatureCardColumn
             key={item.id}
@@ -72,7 +81,20 @@ export default function KeyFeature() {
             ntext={item.ntext}
           />
         ))}
-      </Grid>
+      </Grid> */}
+      {data.map((item) => (
+          <FlutterFeature
+            id={item.id}
+            icon={item.imgSrc}
+            video={item.video}
+            left={item.left}
+            altText={item.altText}
+            subtitle1={item.title}
+            text1={item.text}
+            subtitle2={item.ntitle}
+            text2={item.ntext}
+          />
+        ))}
     </Container>
   </section>
   );

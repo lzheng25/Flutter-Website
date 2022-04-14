@@ -128,7 +128,7 @@ export default function TeamSection() {
     <section sx={styles.TeamSection} id="team">
       <Container pt='100px' pb='100px'>
         <SectionHeader
-          slogan="OUR TEAM"
+          slogan="Our team"
           title="Young and passsionate students"
         />
         <Grid sx={styles.grid}>
