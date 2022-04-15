@@ -26,7 +26,7 @@ const data = {
       altText: 'Intentionality',
       title: 'Intentionality',
       text:
-        'It’s hard to find anything meaningful on current apps when everyone’s having fun with trigger-happy swiping. Here at Flutter, every swipe is made with intention, so you know the person is genuinely interested in getting to know you, and only you.',
+        'It’s hard to find anything meaningful on current apps when everyone’s having fun with trigger-happy swiping. Here at Flutter, every note is sent with intention, so you know the person is genuinely interested in getting to know you, and only you.',
       // text:
       //   'Hi',
     },
@@ -75,6 +75,9 @@ export default function ServiceSection() {
               </Box>
             ))}
           </Grid>
+          <Text pt="2rem">
+          We believe that these two core elements are key to cultivating a serious dating experience online while maintaining the ease of connecting people that existing apps offer. Continue to learn more about how Flutter works!
+          </Text>
         </Box>
       </Container>
       </Container>

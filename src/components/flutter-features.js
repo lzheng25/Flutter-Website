@@ -17,7 +17,6 @@ import SectionHeader from 'components/section-header';
 import Head from 'next/head';
 
 export default function Flutterfeature({
-  id,
   icon,
   video,
   left,
@@ -38,7 +37,7 @@ export default function Flutterfeature({
           {/* <TextFeature subTitle={data.subTitle} title={data.title}/> */}
           <Grid sx={styles.grid}>
             <Image src={icon} alt={altText} sx={styles.img}/>
-            <Box sx={styles.card} key={id}>
+            <Box sx={styles.card}>
               <Box sx={styles.wrapper}>
                 <Heading sx={styles.wrapper.header}>
                   {altText}
@@ -68,7 +67,7 @@ export default function Flutterfeature({
           {/* <TextFeature subTitle={data.subTitle} title={data.title}/> */}
           <Grid sx={styles.grid}>
             <Image src={icon} alt={altText} sx={styles.img}/>
-            <Box sx={styles.card} key={id}>
+            <Box sx={styles.card}>
               <Box sx={styles.wrapper}>
                 <Heading sx={styles.wrapper.header}>
                   {altText}

@@ -20,8 +20,8 @@ export default function Banner() {
           <Heading as="h1" variant="heroPrimary">
             The next dating app to revolutionize the college dating scene
           </Heading>
-          <Text as="p" variant="heroSecondary">
-          No ghosting, no catfishing, no “are they actually interested in me?”  - experience online dating and connect in a completely new way!
+          <Text as="p" variant="heroSecondary" pt="1rem">
+            No ghosting, no catfishing, no “are they actually interested in me?”  - this is online dating reimagined.
           </Text>
 
           <Form/>
@@ -142,7 +142,7 @@ function Form() {
 
 const styles = {
   banner: {
-    pt: ['140px', '145px', '155px', '170px', null, null, '150px', '150px'],
+    pt: ['170px', '170px', '170px', '190px', null, null, '170px', '170px'],
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',
     zIndex: 2,
