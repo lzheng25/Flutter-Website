@@ -51,7 +51,7 @@ const data = [
     id: 4,
     left: true,
     imgSrc: Partnership,
-    video: "/video/Flutter-date.mp4",
+    video: "/video/Flutter-dating.mp4",
     altText: 'Calendar Page',
     title: 'Date Scheduling',
     text:
