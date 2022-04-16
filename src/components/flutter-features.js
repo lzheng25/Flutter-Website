@@ -29,35 +29,43 @@ export default function Flutterfeature({
   // video on left side
   if (left) {
     return (
-      <Container sx={styles.containerBox}>
-        <Box sx={styles.contentBox}>
-          <video autoPlay muted loop src={video} style={{ width: "70%", height:"70%" }} />
-        </Box>
-        <Box styles={styles.thumbnail}>
-          {/* <TextFeature subTitle={data.subTitle} title={data.title}/> */}
-          <Grid sx={styles.grid}>
-            <Image src={icon} alt={altText} sx={styles.img}/>
-            <Box sx={styles.card}>
-              <Box sx={styles.wrapper}>
-                <Heading sx={styles.wrapper.header}>
-                  {altText}
-                </Heading>
-                <Heading sx={styles.wrapper.title}>
-                  {subtitle1}
-                </Heading>
-                <Text sx={styles.wrapper.subTitle}>
-                  {text1}
-                </Text>
-                <Heading sx={styles.wrapper.title}>
-                  {subtitle2}
-                </Heading>
-                <Text sx={styles.wrapper.subTitle}>
-                  {text2}
-                </Text>
+      <Container>
+        {/* <Container pb="2rem">
+          <Image src={icon} alt={altText} sx={styles.img}/>
+          <Heading sx={styles.wrapper.header}>
+            {altText}
+          </Heading>
+        </Container> */}
+        <Container sx={styles.containerBox}>
+          <Box sx={styles.contentBox}>
+            <video autoPlay muted loop src={video} style={{ width: "70%", height:"70%" }} />
+          </Box>
+          <Box styles={styles.thumbnail}>
+            {/* <TextFeature subTitle={data.subTitle} title={data.title}/> */}
+            <Grid sx={styles.grid}>
+              {/* <Image src={icon} alt={altText} sx={styles.img}/> */}
+              <Box sx={styles.card}>
+                <Box sx={styles.wrapper}>
+                  {/* <Heading sx={styles.wrapper.header}>
+                    {altText}
+                  </Heading> */}
+                  <Heading sx={styles.wrapper.title}>
+                    {subtitle1}
+                  </Heading>
+                  <Text sx={styles.wrapper.subTitle}>
+                    {text1}
+                  </Text>
+                  <Heading sx={styles.wrapper.title}>
+                    {subtitle2}
+                  </Heading>
+                  <Text sx={styles.wrapper.subTitle}>
+                    {text2}
+                  </Text>
+                </Box>
               </Box>
-            </Box>
-          </Grid>
-        </Box>
+            </Grid>
+          </Box>
+        </Container>
       </Container>
     );
   } else { // video on right side
@@ -89,7 +97,7 @@ export default function Flutterfeature({
           </Grid>
         </Box>
         <Box sx={styles.contentBox2}>
-          <video autoPlay muted loop src={video} style={{ width: "70%", height:"70%" }} />
+          <video autoPlay muted loop playsInline src={video} style={{ width: "70%", height:"70%" }} />
         </Box>
       </Container>
     );
@@ -119,7 +127,7 @@ const styles = {
     alignItems: ['flex-start', null, null, 'center'],
     justifyContent: ['flex-start', null, null, 'space-between'],
     flexDirection: ['column', null, null, 'row'],
-    pb: [10, null, null, null, null, 3],
+    pb: [10, null, null, null, null, null],
   },
   thumbnail: {
     mr: ['auto', null, null, 6, 60, 85],

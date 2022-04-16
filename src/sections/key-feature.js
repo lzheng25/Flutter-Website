@@ -1,6 +1,6 @@
 /** @jsx jsx */ /** @jsxRuntime classic */
 import { jsx } from 'theme-ui';
-import { Container, Grid } from 'theme-ui';
+import { Container, Grid, Heading, Image, Box } from 'theme-ui';
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
 import FlutterFeature from 'components/flutter-features';
@@ -13,7 +13,7 @@ import Support from 'assets/key-feature/support.svg';
 const data = [
   {
     id: 1,
-    left: false,
+    left: true,
     imgSrc: Subscription,
     video: "/video/Flutter-login.mp4",
     altText: 'Onboarding Page',
@@ -37,7 +37,7 @@ const data = [
   },
   {
     id: 3,
-    left: false,
+    left: true,
     imgSrc: Performance,
     video: "/video/Flutter-inbox.mp4",
     altText: 'Inbox Page',
@@ -83,17 +83,26 @@ export default function KeyFeature() {
         ))}
       </Grid> */}
       {data.map((item) => (
-          <FlutterFeature
-            key={item.id}
-            icon={item.imgSrc}
-            video={item.video}
-            left={item.left}
-            altText={item.altText}
-            subtitle1={item.title}
-            text1={item.text}
-            subtitle2={item.ntitle}
-            text2={item.ntext}
-          />
+          <Box>
+            <Box sx={{ variant: 'sectionHeader' }}>
+              <Image src={item.imgSrc} alt={item.altText} sx={styles.img}/>
+              <Heading sx={styles.wrapper.header}>
+                {item.altText}
+              </Heading>
+            </Box>
+            <FlutterFeature
+              key={item.id}
+              icon={item.imgSrc}
+              video={item.video}
+              left={item.left}
+              altText={item.altText}
+              subtitle1={item.title}
+              text1={item.text}
+              subtitle2={item.ntitle}
+              text2={item.ntext}
+            />
+          </Box>
+          
         ))}
     </Container>
   </section>
@@ -120,5 +129,25 @@ const styles = {
       null,
       'repeat(4,1fr)',
     ],
+  },
+  img: {
+    mx: ['auto', null, 0],
+    ml: ['auto', null, '-13px'],
+    mb: -2,
+    width: ['80px', null, null, '90px', null, 'auto'],
+  },
+  wrapper: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'left',
+    mt: '-30px',
+    header: {
+      fontSize: 5,
+      color: 'primary',
+      lineHeight: 1.4,
+      fontWeight: 700,
+      mb: [2, null, 3],
+    },
   },
 };

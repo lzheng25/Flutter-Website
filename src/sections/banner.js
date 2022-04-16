@@ -38,7 +38,7 @@ export default function Banner() {
             height="900px" 
             width="400px"
             sx={{pb:'10rem'}}/> */}
-          <video autoPlay muted src={"/video/Flutter-big-video.mp4"} style={{ width: "90%", height:"90%" }} />
+          <video autoPlay muted playsInline src={"/video/Flutter-big-video.mp4"} style={{ width: "90%", height:"90%" }} />
         </Box>
         </Container>
       </Container>
