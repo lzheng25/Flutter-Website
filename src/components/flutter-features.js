@@ -97,7 +97,7 @@ export default function Flutterfeature({
           </Grid>
         </Box>
         <Box sx={styles.contentBox2}>
-          <video autoPlay muted loop playsInline src={video} style={{ width: "70%", height:"70%" }} />
+          <video autoPlay muted playsInline src={video} style={{ width: "70%", height:"70%" }} />
         </Box>
       </Container>
     );
