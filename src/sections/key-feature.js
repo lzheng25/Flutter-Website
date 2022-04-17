@@ -45,7 +45,7 @@ const data = [
     text:
       'That’s right! No need to wait for people to swipe on you! When you send a note to someone, you can immediately start talking to them.',
     ntitle: 'Decision-driven, Time-restricted Chat Rooms',
-    ntext: "Texting is a tricky thing when it comes to online dating - some people are just not good at texting, while others don’t like being led on or ghosted. Within 24 hours from the moment you send a note, the recipient will have to make a decision on whether to set up a date with you or reject you. When the recipient either sets up a date or rejects you, you will get your note back and you can send it to someone else."
+    ntext: "Texting is a tricky thing when it comes to online dating - some people are just not good at texting, while others don’t like being led on or ghosted. Within 24 hours from the moment you send a note, the recipient will have to make a decision on whether to set up a date with you or reject you. When the recipient either sets up a date or declines your note, you will get your note back, and you can send it to someone else."
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const data = [
     altText: 'Calendar Page',
     title: 'Date Scheduling',
     text:
-      "The app helps you schedule dates if you’re interested in learning more about the person who sent you a note of interest! When setting up a date, location choices are limited to public settings to ensure safety, and the date and time can be any day in the next two weeks from 11am - 9pm. If you choose to schedule a date (and not reject them), there will be an option to report flaking, and the chat room will stay open until the day of the date :)",
+      "The app helps you schedule dates if you’re interested in learning more about the person who sent you a note of interest! When setting up a date, location choices are limited to public settings to ensure safety, and the date and time can be any day in the next two weeks from 11 am - 9 pm. If you choose to schedule a date (and not reject them), there will be an option to report flaking, and the chat room will stay open until the day of the date :)",
     ntitle: 'Discounts for dates',
     ntext: 'Dates scheduled through the app will be able to enjoy exclusive discounts at nearby shops, restaurants and attractions. There may be only a finite number of discounts for certain places, so be sure to go on more dates and meet in real life!'
   },
