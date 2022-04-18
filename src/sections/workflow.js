@@ -39,7 +39,7 @@ export default function WorkFlow() {
     <section sx={styles.workflow} id="workflow">
       <Container>
         <SectionHeader
-          slogan="Swipe With Intention"
+          slogan="A date is worth a thousand texts"
           title="Get started with Flutter"
           isWhite={true}
         />

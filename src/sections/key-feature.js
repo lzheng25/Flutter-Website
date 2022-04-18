@@ -33,7 +33,7 @@ const data = [
     text:
       "Say goodbye to swipe-through profile stacks! With a feel almost IDENTICAL to Instagram, Flutter’s carousel allows you to browse and revisit profiles around you to your heart’s content. Carousels are automatically refreshed every 24 hours – take your time to find who you like most :)",
     ntitle: 'Limited Actions',
-    ntext: 'No more trigger happy swiping! In fact, Flutter doesn’t even use swipes – you send notes of interest to people you like! Here’s the catch: You only get 1 note at any given time, so take advantage of the carousel and choose carefully. You get your note back when the recipient makes a decision on you.'
+    ntext: 'No more trigger happy swiping! In fact, Flutter doesn’t even use swipes – you send notes of interest to people you like! Here’s the catch: You only have 1 note to send at any given time and receive up to 3 notes from other people, so take advantage of the carousel and choose carefully. You get your note back when the recipient makes a decision on you, and conversely you can receive new notes when you make a decision on other people and free up your inbox.'
   },
   {
     id: 3,
@@ -57,7 +57,7 @@ const data = [
     text:
       "The app helps you schedule dates if you’re interested in learning more about the person who sent you a note of interest! When setting up a date, location choices are limited to public settings to ensure safety, and the date and time can be any day in the next two weeks from 11 am - 9 pm. If you choose to schedule a date (and not reject them), there will be an option to report flaking, and the chat room will stay open until the day of the date :)",
     ntitle: 'Discounts for dates',
-    ntext: 'Dates scheduled through the app will be able to enjoy exclusive discounts at nearby shops, restaurants and attractions. There may be only a finite number of discounts for certain places, so be sure to go on more dates and meet in real life!'
+    ntext: 'Dates scheduled through the app will be able to enjoy exclusive discounts at nearby shops, restaurants, and attractions. There may be only a finite number of discounts for certain places, so be sure to keep your eyes peeled for notifications, go on more dates and meet authentically in real life!'
   },
 ];
 
@@ -66,7 +66,7 @@ export default function KeyFeature() {
     <section id="feature" sx={{ variant:'section.KeyFeature' }}>
     <Container pt='50px' pb='100px'>
       <SectionHeader
-        slogan="Swipe With Intention"
+        slogan="A date is worth a thousand texts"
         title="Key features of Flutter"
       />
       {/* <Grid sx={styles.grid}>
@@ -83,10 +83,10 @@ export default function KeyFeature() {
         ))}
       </Grid> */}
       {data.map((item) => (
-          <Box>
-            <Box sx={{ variant: 'sectionHeader' }}>
-              <Image src={item.imgSrc} alt={item.altText} sx={styles.img}/>
-              <Heading sx={styles.wrapper.header}>
+          <Box key={item.id}>
+            <Box key={item.id} sx={{ variant: 'sectionHeader' }}>
+              <Image key={item.id} src={item.imgSrc} alt={item.altText} sx={styles.img}/>
+              <Heading key={item.id} sx={styles.wrapper.header}>
                 {item.altText}
               </Heading>
             </Box>

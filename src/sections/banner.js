@@ -18,7 +18,7 @@ export default function Banner() {
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <Heading as="h1" variant="heroPrimary">
-            The next dating app to revolutionize the college dating scene
+            A date is worth a thousand texts.
           </Heading>
           <Text as="p" variant="heroSecondary" pt="1rem">
             No ghosting, no catfishing, no “are they actually interested in me?”  - this is online dating reimagined.
