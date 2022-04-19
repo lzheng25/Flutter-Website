@@ -34,7 +34,7 @@ const data = {
       id: 2,
       imgSrc: Secure,
       altText: 'Authenticity',
-      title: 'Authenticity',
+      title: 'In-person communication',
       text:
         'No one loves swiping through a sea of fake profiles and then getting led on or ghosted over text. And it’s almost always better to talk in-person. Here at Flutter, every profile represents a verified college student and chatrooms operate on a unique mechanism to make sure you get to know your interest in the most authentic way possible - in real life.',
       // text:
