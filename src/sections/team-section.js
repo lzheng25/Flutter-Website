@@ -94,33 +94,33 @@ const data = [
       },
     ],
   },
-  {
-    id: 4,
-    imgSrc: Member4,
-    altText: 'Coco Lam',
-    title: 'Coco Lam, CMO',
-    designation: 'Coco Lam is a student at Cardiff Sixth Form College soon to be majoring in Psychology and Behavioural Sciences at University of Cambridge. As a model, influencer and KOL, she has rich media and marketing experiences, she is also the founder of Orange Org- an art-for-charity NPO. Coco is a TEDx speaker, ‘Top 10 Outstanding Young Artists Hong Kong’, photographer and social activist. Also, she is he only girl on the team!',
-    socialProfile: [
-      {
-        id: 1,
-        name: 'facebook',
-        path: '#',
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: 'linkedin',
-        path: '#',
-        icon: <FaLinkedin />,
-      },
-      {
-        id: 3,
-        name: 'instagram',
-        path: '#',
-        icon: <FaInstagram />,
-      },
-    ],
-  },
+  // {
+  //   id: 4,
+  //   imgSrc: Member4,
+  //   altText: 'Coco Lam',
+  //   title: 'Coco Lam, CMO',
+  //   designation: 'Coco Lam is a student at Cardiff Sixth Form College soon to be majoring in Psychology and Behavioural Sciences at University of Cambridge. As a model, influencer and KOL, she has rich media and marketing experiences, she is also the founder of Orange Org- an art-for-charity NPO. Coco is a TEDx speaker, ‘Top 10 Outstanding Young Artists Hong Kong’, photographer and social activist. Also, she is he only girl on the team!',
+  //   socialProfile: [
+  //     {
+  //       id: 1,
+  //       name: 'facebook',
+  //       path: '#',
+  //       icon: <FaFacebookF />,
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'linkedin',
+  //       path: '#',
+  //       icon: <FaLinkedin />,
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'instagram',
+  //       path: '#',
+  //       icon: <FaInstagram />,
+  //     },
+  //   ],
+  // },
 ];
 
 export default function TeamSection() {
