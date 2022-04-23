@@ -129,7 +129,7 @@ export default function TeamSection() {
       <Container pt='100px' pb='100px'>
         <SectionHeader
           slogan="Our team"
-          title="Young and passsionate students"
+          title="Young and passionate students"
         />
         <Grid sx={styles.grid}>
           {data.map((item) => (
