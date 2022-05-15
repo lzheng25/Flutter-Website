@@ -70,6 +70,23 @@ async function saveUser(user) {
       console.log(`error connecting: ${err}`);
     }
     
+    const carolNumber = "lyzheng@andrew.cmu.edu"
+
+    base('Flutter Waitlist').select(
+        {
+          maxRecords: 3,
+          view: 'Grid view'
+        }
+      ).firstPage(function page(err, records)
+        {
+          if (err) { console.error(err); return;  }
+          records.forEach(function(record) {
+              if(record.get('Email') === carolNumber)
+              {
+              console.log('Found record with lyzheng@andrew.cmu.edu. First name is', record.get('First'));
+              }
+            });
+          });
     
     // await updateOrInsert (rec)
     // console.log("Finished updating or inserting new record.")
