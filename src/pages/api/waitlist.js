@@ -63,8 +63,16 @@ async function saveUser(user) {
             "Last": `${user.last}`
     }
 
-    await updateOrInsert (rec)
-    console.log("Finished updating or inserting new record.")
+    try {
+      await updateOrInsert (rec)
+      console.log("Finished updating or inserting new record.")
+    } catch (err) {
+      console.log(`error connecting: ${err}`);
+    }
+    
+    
+    // await updateOrInsert (rec)
+    // console.log("Finished updating or inserting new record.")
     
 }
 
